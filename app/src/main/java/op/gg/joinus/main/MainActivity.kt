@@ -1,16 +1,15 @@
-package op.gg.joinus.login
+package op.gg.joinus.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import op.gg.joinus.R
 
-class LoginActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_JoinUs)
+        setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_main)
 
     }
-
 }

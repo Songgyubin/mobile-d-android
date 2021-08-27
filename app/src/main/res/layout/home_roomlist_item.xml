@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myViewHolder"
+            type="op.gg.joinus.main.HomeRoomListAdapter.MyViewHolder" />
+        <variable
+            name="home_roomlist_item"
+            type="op.gg.joinus.main.HomeRoomListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_home_roomlist_item"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/img_game"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:imageUrl="@{home_roomlist_item.imgGame}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_roomTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@{home_roomlist_item.title}"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_idntime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:text="@{home_roomlist_item.idNTime}"
+            android:textColor="@color/material_on_background_emphasis_medium"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_matchTime"
+            android:layout_width="66dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_matching"
+            android:gravity="center_horizontal"
+            android:text="@{home_roomlist_item.matchTime}"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_numPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="273dp"
+            android:layout_marginLeft="273dp"
+            android:layout_marginTop="32dp"
+            android:text="@{home_roomlist_item.numPeople}"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_icPeople"
+            android:layout_width="20dp"
+            android:layout_height="11.74dp"
+            android:layout_marginStart="308dp"
+            android:layout_marginLeft="308dp"
+            android:layout_marginTop="41dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_num_people" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

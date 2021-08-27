@@ -69,31 +69,56 @@
                 android:layout_height="2dp"
                 android:background="@color/clicked_black" />
 
-            <LinearLayout
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/srl_homeMatching"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/ic_no_match" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|top"
-                    android:layout_weight="0"
-                    android:gravity="center"
-                    android:text="현재 참여할수 있는 매칭이 없습니다."
-                    android:textColor="@color/black" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_homeMatching"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:foregroundGravity="center"
+                        android:visibility="visible">
 
-            </LinearLayout>
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <LinearLayout
+                        android:id="@+id/layout_noMatchingRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/img_noMatchingRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_no_match" />
+
+                        <TextView
+                            android:id="@+id/txt_noMatchingRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:text="@string/txt_noMatchingRoom"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         </LinearLayout>
 

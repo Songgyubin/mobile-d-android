@@ -29,6 +29,18 @@ class HomeFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         binding.rcHomeMatching.layoutManager = layoutManager
         val roomListAdapter = HomeRoomListAdapter(requireContext())
+
+        roomListAdapter.setOnItemClickListner(object:HomeRoomListAdapter.OnItemClickListener{
+            override fun onItemClick(item: HomeRoomListItem) {
+                val roomJoinFragment = RoomJoinFragment(item)
+                val currentActivity:MainActivity
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView_main,roomJoinFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+        })
+
         binding.rcHomeMatching.adapter = roomListAdapter
 
         roomListAdapter.itemList = listOf(HomeRoomListItem("5인큐 빠르게 ㄱ","schan97 | 17:05","방금전","3/5",resources.getString(R.string.imgUrl_lol)),

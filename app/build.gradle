@@ -54,6 +54,9 @@ dependencies {
     def okhttpVer = "3.14.9"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVer"
 
+    // google Login
+    def googleLoginVer = "19.2.0"
+    implementation "com.google.android.gms:play-services-auth:$googleLoginVer"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

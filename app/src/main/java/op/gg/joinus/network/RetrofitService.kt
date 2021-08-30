@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface RetrofitService {
 
-    @GET("login/?")
+    @GET("api/login/?")
     fun getLoginInfo(@Query("code") token: String): Call<Void>
 
 }

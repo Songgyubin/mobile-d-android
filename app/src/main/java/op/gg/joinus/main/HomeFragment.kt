@@ -43,12 +43,13 @@ class HomeFragment : Fragment() {
 
         binding.rcHomeMatching.adapter = roomListAdapter
 
-        roomListAdapter.itemList = listOf(HomeRoomListItem("5인큐 빠르게 ㄱ","schan97 | 17:05","방금전","3/5",resources.getString(R.string.imgUrl_lol)),
-            HomeRoomListItem("5인큐 아무나 오셈","schan9788 | 17:04","방금전","2/5",resources.getString(R.string.imgUrl_lol))
-            )
+        // test list
+        val room1_user = listOf(User(17,"",0,"https://www.figma.com/file/EwzuN4fMWTdYZ5XVKvcprc/joinus_android?node-id=27%3A1964","abcde",567,""),User(19,"",1,"https://www.figma.com/file/EwzuN4fMWTdYZ5XVKvcprc/joinus_android?node-id=27%3A1964","cde",848,""))
+        val room2_user = listOf(User(20,"",0,"https://www.figma.com/file/EwzuN4fMWTdYZ5XVKvcprc/joinus_android?node-id=27%3A1964","xtz",999,""),User(30,"",1,"https://www.figma.com/file/EwzuN4fMWTdYZ5XVKvcprc/joinus_android?node-id=27%3A1964","cxxce",8488,""),User(20,"",0,"https://www.figma.com/file/EwzuN4fMWTdYZ5XVKvcprc/joinus_android?node-id=27%3A1964","xdfdtz",9199,""))
+        val room1 = Room("lol",3,0,1,5,1234,"너만 오면 고",Start_date(0,31),true,567,room1_user)
+        val room2 = Room("lol",4,0,2,5,4567,"빠르게",Start_date(0,30),false,8488,room2_user)
+        roomListAdapter.itemList = listOf(HomeRoomListItem(room1),HomeRoomListItem(room2))
         roomListAdapter.notifyDataSetChanged()
-
-
         if (roomListAdapter.itemCount != 0){
             binding.layoutNoMatchingRoom.visibility = View.GONE
         }

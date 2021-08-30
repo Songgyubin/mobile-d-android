@@ -5,9 +5,6 @@
 
     <data>
         <variable
-            name="myViewHolder"
-            type="op.gg.joinus.main.HomeRoomListAdapter.MyViewHolder" />
-        <variable
             name="home_roomlist_item"
             type="op.gg.joinus.main.HomeRoomListItem" />
     </data>
@@ -23,6 +20,9 @@
             android:id="@+id/img_game"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
             app:imageUrl="@{home_roomlist_item.imgGame}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +31,8 @@
             android:id="@+id/txt_roomTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="35dp"
             android:text="@{home_roomlist_item.title}"
             android:textColor="@color/black"
@@ -42,6 +44,8 @@
             android:id="@+id/txt_idntime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="54dp"
             android:text="@{home_roomlist_item.idNTime}"
             android:textColor="@color/material_on_background_emphasis_medium"
@@ -53,38 +57,41 @@
             android:id="@+id/txt_matchTime"
             android:layout_width="66dp"
             android:layout_height="20dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/bg_matching"
-            android:gravity="center_horizontal"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="0dp"
             android:text="@{home_roomlist_item.matchTime}"
             android:textColor="@color/white"
             android:textSize="11sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_game"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_numPeople"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="273dp"
-            android:layout_marginLeft="273dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:includeFontPadding="false"
             android:text="@{home_roomlist_item.numPeople}"
             android:textColor="@color/black"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img_icPeople"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_icPeople"
             android:layout_width="20dp"
             android:layout_height="11.74dp"
-            android:layout_marginStart="308dp"
-            android:layout_marginLeft="308dp"
             android:layout_marginTop="41dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_num_people" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,13 @@ data class Room(
     @SerializedName("room_name")
     var room_name: String = "",
     @SerializedName("start_date")
-    var start_date:Start_date = Start_date(),
+    var start_date:Start_date ,
     @SerializedName("voice_chat")
-    var voice_chat: Boolean = true
+    var voice_chat: Boolean = true,
+    @SerializedName("user_pk")
+    var user_pk: Int = 0,
+    @SerializedName("user_list")
+    var user_list: List<User>
 )
 
 data class Start_date(
@@ -44,4 +48,21 @@ data class Start_date(
     var timezoneOffset: Int = 0,
     @SerializedName("year")
     var year: Int = 0,
+)
+
+data class User(
+    @SerializedName("age")
+    var age: Int = 0,
+    @SerializedName("firebase_token")
+    var firebase_token:String = "",
+    @SerializedName("gender")
+    var gender: Int = 0,
+    @SerializedName("image_address")
+    var image_address: String = "",
+    @SerializedName("nickname")
+    var nickname:String = "",
+    @SerializedName("pk")
+    var pk: Int = 0,
+    @SerializedName("token")
+    var token: String = "",
 )

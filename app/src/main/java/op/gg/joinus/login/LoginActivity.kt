@@ -15,6 +15,7 @@ import op.gg.joinus.R
 import op.gg.joinus.databinding.ActivityLoginBinding
 import op.gg.joinus.model.UserInfo
 import op.gg.joinus.network.RetrofitClient
+import op.gg.joinus.onboarding.OnboardingActivity
 import op.gg.joinus.util.joinLog
 import retrofit2.Call
 import retrofit2.Callback
@@ -60,7 +61,9 @@ class LoginActivity : AppCompatActivity() {
         result.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 val body = response.body()
-                joinLog(TAG,"success: ${body.toString()}")
+                joinLog(TAG, "success: ${body.toString()}")
+
+                startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
 
             }
 

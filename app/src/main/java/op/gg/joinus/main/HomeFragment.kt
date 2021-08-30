@@ -1,7 +1,6 @@
 package op.gg.joinus.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,22 +8,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import op.gg.joinus.R
-import op.gg.joinus.databinding.ActivityMainBinding
-import op.gg.joinus.databinding.HomeFragmentBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import op.gg.joinus.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-    private lateinit var binding:HomeFragmentBinding
+    private lateinit var binding:FragmentHomeBinding
     private val roomList:MutableList<String> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.home_fragment,container,false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
 
         val layoutManager = LinearLayoutManager(context)
         binding.rcHomeMatching.layoutManager = layoutManager

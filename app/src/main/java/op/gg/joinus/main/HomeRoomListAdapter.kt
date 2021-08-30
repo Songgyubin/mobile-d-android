@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.recyclerview.widget.RecyclerView
 import op.gg.joinus.R
-import op.gg.joinus.databinding.HomeRoomlistItemBinding
+import op.gg.joinus.databinding.ItemHomeRoomlistBinding
 
 class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<HomeRoomListAdapter.MyViewHolder>() {
 
@@ -20,7 +20,7 @@ class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<
         mListener = listener
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeRoomListAdapter.MyViewHolder {
-        val binding = HomeRoomlistItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemHomeRoomlistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
@@ -31,7 +31,7 @@ class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(itemList[position])
     }
-    inner class MyViewHolder(private val binding:HomeRoomlistItemBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class MyViewHolder(private val binding:ItemHomeRoomlistBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item:HomeRoomListItem){
             with(binding){
                 homeRoomlistItem = item
@@ -43,7 +43,7 @@ class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<
                 executePendingBindings()
             }
         }
-        fun getBinding():HomeRoomlistItemBinding{
+        fun getBinding():ItemHomeRoomlistBinding{
             return binding
         }
     }

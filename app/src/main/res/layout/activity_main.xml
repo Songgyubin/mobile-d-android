@@ -13,14 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple_200"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView_main"
             android:name="op.gg.joinus.main.HomeFragment"

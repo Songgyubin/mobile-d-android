@@ -9,7 +9,7 @@ class RetrofitClient {
     companion object {
         private val retrofitClient: RetrofitClient = RetrofitClient()
         fun getInstance(): RetrofitClient = retrofitClient
-        val url = "http://ec2-3-128-67-103.us-east-2.compute.amazonaws.com:80/api/"
+        val url = "http://ec2-3-128-67-103.us-east-2.compute.amazonaws.com:80/"
     }
 
     fun buildRetrofit(): RetrofitService {

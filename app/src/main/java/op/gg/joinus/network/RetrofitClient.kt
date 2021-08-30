@@ -1,7 +1,6 @@
 package op.gg.joinus.network
 
 import com.google.gson.GsonBuilder
-import op.gg.joinus.util.NullOnEmptyConverterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

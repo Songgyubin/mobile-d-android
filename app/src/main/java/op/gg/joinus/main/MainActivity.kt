@@ -33,4 +33,7 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
+    fun getBinding() :ActivityMainBinding{
+        return binding
+    }
 }

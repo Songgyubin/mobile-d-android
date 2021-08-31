@@ -1,9 +1,10 @@
 package op.gg.joinus.main
 
+import op.gg.joinus.model.RoomInfo
 import java.util.*
 
 data class HomeRoomListItem (
-    var room:Room
+    var room: RoomInfo
 ){
     lateinit var title:String
     lateinit var idNTime:String
@@ -17,12 +18,12 @@ data class HomeRoomListItem (
             //set idNTime
             idNTime = ""
             for (n in room.user_list){
-                if (n.pk == room.user_pk){
+                if (n.pk == room.leader_pk){
                     idNTime += n.nickname
                 }
             }
             // 생성날짜 추가
-            idNTime += "| " + "room.date"
+            idNTime += " | " + "room.date"
             //set matchTime
             val calendar = Calendar.getInstance()
             val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
@@ -35,7 +36,7 @@ data class HomeRoomListItem (
                 matchTime = "매칭 완료"
             }
             //set numPeople
-            numPeople =  room.user_list.size.toString() + "/" + room.people_number.toString()
+            numPeople =  room.now_people_cnt.toString() + "/" + room.people_number.toString()
             //set imgGame
             when(room.game_name){
                 "lol"->{

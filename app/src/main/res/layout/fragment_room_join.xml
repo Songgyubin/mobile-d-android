@@ -41,9 +41,11 @@
                     android:id="@+id/txt_dialog_room_join_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <View

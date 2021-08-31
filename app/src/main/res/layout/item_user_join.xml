@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item_user_join"
-            type="op.gg.joinus.main.User" />
+            type="op.gg.joinus.model.UserInfo" />
     </data>
     <LinearLayout
         android:layout_width="wrap_content"

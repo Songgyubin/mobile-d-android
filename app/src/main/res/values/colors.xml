@@ -11,4 +11,8 @@
     <color name="floating_background">#007AFF</color>
     <color name="dialog_room_join">#99111111</color>
     <color name="background">#21111111</color>
+    <color name="black_30">#4C111111</color>
+    <color name="black_13">#21111111</color>
+    <color name="black_60">#99111111</color>
+    <color name="white_60">#99FFFFFF</color>
 </resources>

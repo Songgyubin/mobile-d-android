@@ -22,7 +22,9 @@ data class RoomInfo (
     @SerializedName("room_name")
     var room_name: String = "",
     @SerializedName("start_date")
-    var start_date: RoomStartDate ,
+    var start_date: String ,
+    @SerializedName("created_at")
+    var created_at: String ,
     @SerializedName("voice_chat")
     var voice_chat: Boolean = true,
     @SerializedName("user_list")

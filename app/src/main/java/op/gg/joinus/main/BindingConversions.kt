@@ -8,9 +8,11 @@ import com.bumptech.glide.Glide
 object BindingConversions {
     @BindingAdapter("imageUrl")
     @JvmStatic
-    fun loadImage(imageView: ImageView, url:String){
-        Glide.with(imageView.context)
-            .load(url)
-            .into(imageView)
+    fun loadImage(imageView: ImageView, url:String?){
+        if(url != null){
+            Glide.with(imageView.context)
+                .load(url)
+                .into(imageView)
+        }
     }
 }

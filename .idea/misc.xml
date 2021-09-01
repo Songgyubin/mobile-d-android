@@ -3,20 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/bg_complete_match.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/bg_matching.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/bg_rb_checked.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/bg_rb_not_checked.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/bottom_navigation_item_color.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/fg_rb_checked_game.xml" value="0.221875" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_add_match_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_navigation_home.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_navigation_my.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_navigation_mymatch.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_nevigation_home.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_nevigation_home_icon.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_nevigation_my.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_bottom_nevigation_mymatch.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_add_matching.xml" value="0.221875" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_minus.xml" value="0.221875" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_plus.xml" value="0.221875" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_home_fillter_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_home_search_button.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_lol.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_no_match.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_num_people.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_toolbar_navigation.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_toolbar_navigation_exit.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/splash.xml" value="0.221875" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/st_checked_game.xml" value="0.221875" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/font/fonts.xml" value="0.3963541666666667" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/dialog_room_join.xml" value="0.33152173913043476" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_add_matching.xml" value="0.31567028985507245" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_blank.xml" value="0.3641304347826087" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_home.xml" value="0.17572463768115942" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_new_room.xml" value="0.24114583333333334" />
@@ -30,6 +50,7 @@
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/roomlist_fragment.xml" value="0.25" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/menu/bottomnavigation_menu.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/menu/menu_add_matching.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>

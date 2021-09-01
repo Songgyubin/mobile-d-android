@@ -16,7 +16,9 @@ import com.bumptech.glide.Glide
 import op.gg.joinus.R
 import op.gg.joinus.databinding.FragmentRoomJoinBinding
 import op.gg.joinus.util.getTier
+import op.gg.joinus.util.joinLog
 import op.gg.joinus.util.setImg
+import java.io.IOException
 
 class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
     private lateinit var binding: FragmentRoomJoinBinding
@@ -79,7 +81,18 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
         val tier:String = getTier(item.room.game_name,item.room.lowest_tier) + " 이상 " + getTier(item.room.game_name,item.room.highest_tier) + " 이하"
         binding.txtDialogRoomJoinTier.text = tier
         // set Start Date/Time
-        val date = item.room.start_date.year.toString() + "년 " + item.room.start_date.month.toString() + "월 " + item.room.start_date.day.toString() + "일 " + item.room.start_date.hours.toString() + "시 " + item.room.start_date.minutes.toString() + "분"
+        var date = ""
+        try{
+            val day = item.room.start_date.split(" ")[0].split("-")
+            val time = item.room.start_date.split(" ")[1].split(":")
+            date = day[0] + "년 " +
+                    day[1] + "월 " +
+                    day[2] + "일 " +
+                    time[0] + "시 " +
+                    time[1] + "분 "
+        }catch(e:IOException){
+            joinLog("HomeRoomListItem",e.stackTraceToString())
+        }
         binding.txtDialogRoomJoinTime.text = date
         // set Joining user
         val layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)

@@ -82,8 +82,9 @@ class AddMatchingFragment: Fragment() {
                     val lowest_tier: Int = 0
                     val people_number: Int = binding.txtNumPeople.text.toString().toInt()
                     val room_name: String = binding.ptTitle.text.toString()
-                    val start_date = RoomStartDate(calendar.get(Calendar.DATE),calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.HOUR_OF_DAY),
-                        calendar.get(Calendar.MINUTE),calendar.get(Calendar.MONTH)+1,0,0,0,0,calendar.get(Calendar.YEAR))
+                    val start_date = (
+                            calendar.get(Calendar.YEAR).toString() + "-" + (calendar.get(Calendar.MONTH)+1).toString() + "-" +
+                                    calendar.get(Calendar.DAY_OF_MONTH).toString() + " " +calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":00")
                     val voice_chat: Boolean = binding.rbVoiceYes.isChecked
                     if (room_name == ""){
                         Toast.makeText(requireContext(),"참가조건 확인하셈",Toast.LENGTH_LONG).show()
@@ -157,7 +158,6 @@ class AddMatchingFragment: Fragment() {
         binding.btnChangeDate.setOnClickListener {
             var dateString = ""
             var timeString = ""
-            val calendar = Calendar.getInstance()
             val dateListener =
                 DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                     dateString = "${year}년 ${String.format("%02d",month+1)}월 ${String.format("%02d",dayOfMonth)}일"

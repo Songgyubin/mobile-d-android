@@ -6,7 +6,7 @@ data class RoomCreate(
     var lowest_tier: Int,
     var people_number: Int,
     val room_name: String,
-    var start_date: RoomStartDate,
+    var start_date: String,
     var user_pk: Int,
     var voice_chat: Boolean
 

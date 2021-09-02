@@ -2,6 +2,7 @@ package op.gg.joinus.main
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Build
 import android.os.Bundle
@@ -29,6 +30,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import android.view.LayoutInflater
+import androidx.databinding.DataBindingUtil.setContentView
+import op.gg.joinus.databinding.DialogCheckMatchingBinding
+
 
 class AddMatchingFragment: Fragment() {
     private lateinit var binding:FragmentAddMatchingBinding
@@ -74,7 +79,6 @@ class AddMatchingFragment: Fragment() {
         toolbar.setOnMenuItemClickListener {
             when(it.itemId){
                 R.id.item_add_match_ok->{
-                    joinLog("addMatchingFragment","item_add_match_ok_click")
                     val game_name: String = "league of legends"
                     // + tier 변경 추가, user_pk값 클라이언트에서 받아오기, game_name when으로 구분하기
                     val highest_tier: Int = 0
@@ -87,7 +91,17 @@ class AddMatchingFragment: Fragment() {
                                     calendar.get(Calendar.DAY_OF_MONTH).toString() + " " +calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":00")
                     val voice_chat: Boolean = binding.rbVoiceYes.isChecked
                     if (room_name == ""){
-                        Toast.makeText(requireContext(),"참가조건 확인하셈",Toast.LENGTH_LONG).show()
+                        val builder = Dialog(requireContext())
+                        val bindingDialog: DialogCheckMatchingBinding = DataBindingUtil.inflate(
+                            LayoutInflater.from(
+                                context
+                            ), R.layout.dialog_check_matching, null, false
+                        )
+                        bindingDialog.btnCheckMatching.setOnClickListener {
+                            builder.dismiss()
+                        }
+                        builder.setContentView(bindingDialog.root)
+                        builder.show()
                     }
                     else{
                         // + update 필요
@@ -104,7 +118,6 @@ class AddMatchingFragment: Fragment() {
                             }
                             override fun onFailure(call: Call<Int>, t: Throwable) {
                                 joinLog("response fail",t.toString())
-
                             }
                         })
                     }

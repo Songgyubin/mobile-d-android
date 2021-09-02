@@ -22,6 +22,7 @@
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_add_matching.xml" value="0.221875" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_minus.xml" value="0.221875" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_btn_plus.xml" value="0.221875" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_check_image.xml" value="0.26153846153846155" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_home_fillter_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_home_search_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
@@ -35,6 +36,7 @@
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/font/fonts.xml" value="0.3963541666666667" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/dialog_check_matching.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/dialog_room_join.xml" value="0.33152173913043476" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_add_matching.xml" value="0.31567028985507245" />
         <entry key="..\:/Users/schan/Desktop/mobile-d-android/app/src/main/res/layout/fragment_blank.xml" value="0.3641304347826087" />

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home_filter"
+        android:icon="@drawable/ic_home_fillter_button"
+        android:title="Filter"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_home_search"
+        android:icon="@drawable/ic_home_search_button"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+</menu>

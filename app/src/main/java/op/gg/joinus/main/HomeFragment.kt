@@ -1,15 +1,21 @@
 package op.gg.joinus.main
 
 import android.annotation.SuppressLint
+import android.app.Dialog
+import android.os.Build
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import op.gg.joinus.R
+import op.gg.joinus.databinding.DialogCheckMatchingBinding
 import op.gg.joinus.databinding.FragmentHomeBinding
+import op.gg.joinus.model.RoomCreate
 import op.gg.joinus.model.RoomInfo
 import op.gg.joinus.model.RoomStartDate
 import op.gg.joinus.model.UserInfo
@@ -18,10 +24,12 @@ import op.gg.joinus.util.joinLog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var binding:FragmentHomeBinding
     private lateinit var roomListAdapter:HomeRoomListAdapter
+
     //private val roomList:MutableList<String> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +42,49 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onStart() {
+        setToolbar()
+        super.onStart()
+    }
+
+    override fun onStop(){
+        returnToolbar()
+        super.onStop()
+    }
+
+    private fun returnToolbar(){
+        val toolbar = (activity as MainActivity).getBinding().toolbarMain
+        toolbar.navigationIcon = null
+        toolbar.setNavigationOnClickListener {  }
+        toolbar.menu.clear()
+        (activity as MainActivity).getBinding().toolbarMainTitle.text =""
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    private fun setToolbar(){
+        val toolbar = (activity as MainActivity).getBinding().toolbarMain
+        toolbar.inflateMenu(R.menu.menu_home)
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.item_home_filter-> {
+                    val homFilterFragment = HomeFilterFragment()
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_main,homFilterFragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                R.id.item_home_search->{
+
+                }
+            }
+            return@setOnMenuItemClickListener true
+        }
+    }
+
+
 
     private fun initView(){
         //set RecyclerView LayoutManger

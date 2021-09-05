@@ -39,24 +39,29 @@ class AddMatchingFragment: Fragment() {
     private lateinit var binding:FragmentAddMatchingBinding
     private lateinit var calendar:Calendar
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_matching,container,false)
-        setToolbar()
-        setBottomNavigationView()
+
         initView()
         initListener()
         return binding.root
     }
 
-    override fun onDestroy() {
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onStart() {
+        setToolbar()
+        setBottomNavigationView()
+        super.onStart()
+    }
+
+    override fun onStop(){
         returnToolbar()
         returnBottomNavigationView()
-        super.onDestroy()
+        super.onStop()
     }
 
     private fun returnToolbar(){
@@ -64,12 +69,12 @@ class AddMatchingFragment: Fragment() {
         toolbar.navigationIcon = null
         toolbar.setNavigationOnClickListener {  }
         toolbar.menu.clear()
-        (activity as MainActivity).getBinding().toolbarMainTitle.text =""
+        (activity as MainActivity).getBinding().toolbarMainTitle.text = ""
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    private fun setToolbar(){
+    fun setToolbar(){
         val toolbar = (activity as MainActivity).getBinding().toolbarMain
         toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_toolbar_navigation_exit,resources.newTheme())
         toolbar.setNavigationOnClickListener {
@@ -120,6 +125,7 @@ class AddMatchingFragment: Fragment() {
                                 joinLog("response fail",t.toString())
                             }
                         })
+                        (activity as MainActivity).supportFragmentManager.popBackStack()
                     }
                 }
                 else ->{
@@ -142,6 +148,7 @@ class AddMatchingFragment: Fragment() {
     }
 
     private fun initView(){
+        calendar = Calendar.getInstance()
         // set StartDate
         calendar = Calendar.getInstance()
         val startDate = calendar.get(Calendar.YEAR).toString() + "년 " +
@@ -150,8 +157,6 @@ class AddMatchingFragment: Fragment() {
                 String.format("%02d",calendar.get(Calendar.HOUR)) + "시 " +
                 String.format("%02d",calendar.get(Calendar.MINUTE)) + "분"
         binding.txtStartDate.text = startDate
-        // set voice
-        binding.rbVoiceYes.isChecked = true
     }
 
     private fun initListener(){
@@ -203,5 +208,25 @@ class AddMatchingFragment: Fragment() {
             binding.rbVoiceNo.background = tempBackground
             binding.rbVoiceNo.setTextColor(tempTextColor)
         }
+
+        //set tier
+        binding.btnChangeTier.setOnClickListener {
+            var gameName = ""
+            when(binding.rgGame.checkedRadioButtonId){
+                binding.rbGameLol.id->{
+                    gameName = "league of legends"
+                }
+            }
+            returnToolbar()
+            val changeTierFragment = ChangeTierFragment(gameName,this)
+            parentFragmentManager.beginTransaction()
+                .hide(this)
+                .add(R.id.fragmentContainerView_main,changeTierFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+    fun getBinding():FragmentAddMatchingBinding{
+        return binding
     }
 }

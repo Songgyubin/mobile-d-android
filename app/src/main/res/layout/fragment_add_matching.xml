@@ -183,12 +183,24 @@
                 android:orientation="horizontal">
 
                 <RadioGroup
+                    android:id="@+id/rg_game"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/rb_game_lol"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/ic_no_match"
+                        android:button="@drawable/st_checked_game"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/rb_game_ow"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="20dp"
@@ -198,17 +210,7 @@
                         android:button="@drawable/st_checked_game" />
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_weight="0"
-                        android:background="@drawable/ic_no_match"
-                        android:button="@drawable/st_checked_game" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton4"
+                        android:id="@+id/rb_game_sa"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="20dp"
@@ -217,7 +219,7 @@
                         android:button="@null" />
 
                     <RadioButton
-                        android:id="@+id/radioButton3"
+                        android:id="@+id/rb_game_pubg"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="20dp"
@@ -267,6 +269,7 @@
                         android:layout_weight="0"
                         android:background="@drawable/bg_rb_checked"
                         android:button="@null"
+                        android:checked="true"
                         android:gravity="center"
                         android:text="@string/rb_add_matching_yes"
                         android:textColor="@color/white"
@@ -310,7 +313,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/txt_tier"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

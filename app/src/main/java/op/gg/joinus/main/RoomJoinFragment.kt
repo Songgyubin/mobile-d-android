@@ -22,7 +22,7 @@ import java.io.IOException
 
 class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
     private lateinit var binding: FragmentRoomJoinBinding
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,8 +30,7 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
     ): View {
         //data bind
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_room_join,container,false)
-        // set MainActivity toolbar
-        setToolbar()
+
         // initialize View
         initView()
         // set button click listener
@@ -39,9 +38,16 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
 
         return binding.root
     }
-    override fun onDestroy() {
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onStart() {
+        setToolbar()
+        super.onStart()
+    }
+
+    override fun onStop() {
         returnToolbar()
-        super.onDestroy()
+        super.onStop()
     }
     private fun returnToolbar(){
         val toolbar = (activity as MainActivity).getBinding().toolbarMain

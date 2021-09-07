@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import op.gg.joinus.databinding.ItemUserJoinBinding
+import op.gg.joinus.model.UserInfo
 
 class UserJoinListAdapter(context: Context):RecyclerView.Adapter<UserJoinListAdapter.MyViewHolder>() {
-    var itemList = listOf<User>()
+    var itemList = listOf<UserInfo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemUserJoinBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,7 +23,7 @@ class UserJoinListAdapter(context: Context):RecyclerView.Adapter<UserJoinListAda
         return itemList.size
     }
     inner class MyViewHolder(private val binding: ItemUserJoinBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item:User){
+        fun bind(item:UserInfo){
             with(binding){
                 itemUserJoin = item
                 executePendingBindings()

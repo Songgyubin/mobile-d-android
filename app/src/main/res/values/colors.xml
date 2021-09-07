@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="clicked_black">#4C000000</color>
+    <color name="floating_background">#007AFF</color>
+    <color name="dialog_room_join">#99111111</color>
+    <color name="background">#21111111</color>
 </resources>

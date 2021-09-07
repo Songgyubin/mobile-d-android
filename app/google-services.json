@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "603643292964",
+    "project_id": "opgg-8bbfb",
+    "storage_bucket": "opgg-8bbfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603643292964:android:f0a19fc2a22e39958317b1",
+        "android_client_info": {
+          "package_name": "op.gg.joinus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603643292964-s68d70479nrv18ig6bo3kqv9bv3pp5pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0Ysm8DU1w5zpvSfLkrcluHtzvEG08dQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603643292964-s68d70479nrv18ig6bo3kqv9bv3pp5pf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "603643292964-6u4ps9sn9o5lh473nmtlfe77v4o4v3t4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "opgg-d-JOINUS"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

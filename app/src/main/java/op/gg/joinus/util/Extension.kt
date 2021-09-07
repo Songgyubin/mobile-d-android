@@ -49,6 +49,42 @@ fun getTier(game_name:String,tier:Int):String{
     return strTier
 }
 
+fun getTierByName(game_name:String,tier:String):Int{
+    var intTier = 0
+    when(game_name) {
+        "league of legends" -> {
+            when (tier) {
+                "아이언" -> {
+                    intTier = 0
+                }
+                "브론즈" -> {
+                    intTier = 1
+                }
+                "실버" -> {
+                    intTier = 2
+                }
+                "골드" -> {
+                    intTier = 3
+                }
+                "플래티넘" -> {
+                    intTier = 4
+                }
+                "다이아" -> {
+                    intTier = 5
+                }
+                "마스터" -> {
+                    intTier = 6
+                }
+                "챌린저" -> {
+                    intTier = 7
+                }
+            }
+        }
+        else ->{}
+    }
+    return intTier
+}
+
 @SuppressLint("SimpleDateFormat")
 //date1 - date2
 fun diffCalendar(date1:String, date2:String):String{

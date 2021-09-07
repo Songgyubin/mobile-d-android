@@ -39,34 +39,19 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onStart() {
+        (activity as MainActivity).resetToolbar()
         setToolbar()
         super.onStart()
     }
 
     override fun onStop() {
-        returnToolbar()
+        (activity as MainActivity).resetToolbar()
         super.onStop()
     }
-    private fun returnToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = null
-        toolbar.setNavigationOnClickListener {  }
-        (activity as MainActivity).getBinding().toolbarMainTitle.text =""
-    }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun setToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_toolbar_navigation,resources.newTheme())
-        toolbar.setNavigationOnClickListener {
-            (activity as MainActivity).supportFragmentManager.popBackStack()
-        }
-        (activity as MainActivity).getBinding().toolbarMainTitle.text = "매칭 참가"
-        (activity as MainActivity).getBinding().toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,17f)
-
+        (activity as MainActivity).setToolbar("매칭 참가",R.drawable.ic_toolbar_navigation)
     }
 
     private fun initView(){

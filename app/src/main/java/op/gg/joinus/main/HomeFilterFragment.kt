@@ -25,47 +25,20 @@ class HomeFilterFragment: Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onStart() {
+        (activity as MainActivity).resetToolbar()
         setToolbar()
-        setBottomNavigationView()
+        (activity as MainActivity).setBottomNavigationView()
         super.onStart()
     }
 
     override fun onStop() {
-        returnToolbar()
-        returnBottomNavigationView()
+        (activity as MainActivity).resetToolbar()
+        (activity as MainActivity).returnBottomNavigationView()
         super.onStop()
     }
 
-    private fun setBottomNavigationView(){
-        val bottomNavigationView = (activity as MainActivity).getBinding().bottomNavigationViewMain
-        bottomNavigationView.visibility = View.GONE
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun setToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        (activity as MainActivity).getBinding().toolbarMainTitle.text = "매칭 필터"
-        (activity as MainActivity).getBinding().toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,17f)
-        toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_toolbar_navigation,resources.newTheme())
-        toolbar.setNavigationOnClickListener {
-            (activity as MainActivity).supportFragmentManager.popBackStack()
-        }
-
+        (activity as MainActivity).setToolbar("매칭 필터",R.drawable.ic_toolbar_navigation)
     }
-
-    private fun returnToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = null
-        toolbar.setNavigationOnClickListener {  }
-        toolbar.menu.clear()
-        (activity as MainActivity).getBinding().toolbarMainTitle.text =""
-    }
-    private fun returnBottomNavigationView(){
-        val bottomNavigationView = (activity as MainActivity).getBinding().bottomNavigationViewMain
-        bottomNavigationView.visibility = View.VISIBLE
-    }
-
 }

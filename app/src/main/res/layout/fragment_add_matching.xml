@@ -195,7 +195,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="0"
-                        android:background="@drawable/ic_no_match"
+                        android:background="@drawable/ic_game_lol"
                         android:button="@drawable/st_checked_game"
                         android:checked="true" />
 
@@ -206,7 +206,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="0"
-                        android:background="@drawable/ic_no_match"
+                        android:background="@drawable/ic_game_ow"
                         android:button="@drawable/st_checked_game" />
 
                     <RadioButton
@@ -216,7 +216,8 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="0"
-                        android:button="@null" />
+                        android:background="@drawable/ic_game_sa"
+                        android:button="@drawable/st_checked_game" />
 
                     <RadioButton
                         android:id="@+id/rb_game_pubg"
@@ -225,7 +226,8 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="0"
-                        android:button="@null" />
+                        android:background="@drawable/ic_game_pubg"
+                        android:button="@drawable/st_checked_game" />
                 </RadioGroup>
             </LinearLayout>
 

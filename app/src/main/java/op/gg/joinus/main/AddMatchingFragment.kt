@@ -1,6 +1,5 @@
 package op.gg.joinus.main
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
@@ -8,30 +7,20 @@ import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.*
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.view.menu.MenuBuilder
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.google.gson.annotations.SerializedName
 import op.gg.joinus.R
 import op.gg.joinus.databinding.FragmentAddMatchingBinding
 import op.gg.joinus.model.RoomCreate
-import op.gg.joinus.model.RoomInfo
-import op.gg.joinus.model.RoomStartDate
-import op.gg.joinus.model.UserInfo
 import op.gg.joinus.network.RetrofitClient
 import op.gg.joinus.util.joinLog
-import op.gg.joinus.util.setImg
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
 import java.util.*
 import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil.setContentView
+import androidx.appcompat.widget.Toolbar
 import op.gg.joinus.databinding.DialogCheckMatchingBinding
 
 
@@ -51,38 +40,22 @@ class AddMatchingFragment: Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onStart() {
+        (activity as MainActivity).resetToolbar()
         setToolbar()
-        setBottomNavigationView()
+        (activity as MainActivity).setBottomNavigationView()
         super.onStart()
     }
 
     override fun onStop(){
-        returnToolbar()
-        returnBottomNavigationView()
+        (activity as MainActivity).resetToolbar()
+        (activity as MainActivity).returnBottomNavigationView()
         super.onStop()
     }
 
-    private fun returnToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = null
-        toolbar.setNavigationOnClickListener {  }
-        toolbar.menu.clear()
-        (activity as MainActivity).getBinding().toolbarMainTitle.text = ""
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun setToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_toolbar_navigation_exit,resources.newTheme())
-        toolbar.setNavigationOnClickListener {
-            (activity as MainActivity).supportFragmentManager.popBackStack()
-        }
-        toolbar.inflateMenu(R.menu.menu_add_matching)
-        toolbar.setOnMenuItemClickListener {
-            when(it.itemId){
+        val menuListener = Toolbar.OnMenuItemClickListener { item ->
+            when(item!!.itemId){
                 R.id.item_add_match_ok->{
                     val game_name: String = "league of legends"
                     // + tier 변경 추가, user_pk값 클라이언트에서 받아오기, game_name when으로 구분하기
@@ -107,8 +80,7 @@ class AddMatchingFragment: Fragment() {
                         }
                         builder.setContentView(bindingDialog.root)
                         builder.show()
-                    }
-                    else{
+                    } else{
                         // + update 필요
                         val roomInfo = RoomCreate(game_name, highest_tier, lowest_tier, people_number, room_name, start_date, user_pk, voice_chat)
                         val retrofit = RetrofitClient.getInstance()
@@ -121,6 +93,7 @@ class AddMatchingFragment: Fragment() {
                                 }
                                 joinLog("response",response.body().toString())
                             }
+
                             override fun onFailure(call: Call<Int>, t: Throwable) {
                                 joinLog("response fail",t.toString())
                             }
@@ -131,20 +104,9 @@ class AddMatchingFragment: Fragment() {
                 else ->{
                 }
             }
-            return@setOnMenuItemClickListener true
+            true
         }
-        (activity as MainActivity).getBinding().toolbarMainTitle.text = "매칭 만들기"
-        (activity as MainActivity).getBinding().toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,17f)
-
-    }
-    private fun setBottomNavigationView(){
-        val bottomNavigationView = (activity as MainActivity).getBinding().bottomNavigationViewMain
-        bottomNavigationView.visibility = View.GONE
-    }
-
-    private fun returnBottomNavigationView(){
-        val bottomNavigationView = (activity as MainActivity).getBinding().bottomNavigationViewMain
-        bottomNavigationView.visibility = View.VISIBLE
+        (activity as MainActivity).setToolbar(R.menu.menu_add_matching,menuListener,"매칭 만들기",R.drawable.ic_toolbar_navigation_exit)
     }
 
     private fun initView(){
@@ -217,7 +179,7 @@ class AddMatchingFragment: Fragment() {
                     gameName = "league of legends"
                 }
             }
-            returnToolbar()
+            (activity as MainActivity).resetToolbar()
             val changeTierFragment = ChangeTierFragment(gameName,this)
             parentFragmentManager.beginTransaction()
                 .hide(this)

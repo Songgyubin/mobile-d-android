@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.get
 import androidx.core.view.size
 import androidx.databinding.DataBindingUtil
@@ -66,53 +67,39 @@ class ChangeTierFragment(private val gameName:String, private val fragment:AddMa
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onStart() {
+        (activity as MainActivity).resetToolbar()
         setToolbar()
         super.onStart()
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onStop(){
-        returnToolbar()
-        fragment.setToolbar()
+        (activity as MainActivity).resetToolbar()
         super.onStop()
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onDestroy() {
+        fragment.setToolbar()
+        super.onDestroy()
+    }
+
     private fun setToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        (activity as MainActivity).getBinding().toolbarMainTitle.text = "참가자 티어"
-        (activity as MainActivity).getBinding().toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,17f)
-        toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_toolbar_navigation,resources.newTheme())
-        toolbar.setNavigationOnClickListener {
-            (activity as MainActivity).supportFragmentManager.popBackStack()
-        }
-        toolbar.inflateMenu(R.menu.menu_add_matching)
-        toolbar.setOnMenuItemClickListener {
+        val menuListener = Toolbar.OnMenuItemClickListener { item ->
             val addMatchingFragment = fragment
-            when(it.itemId){
+            when(item.itemId){
                 R.id.item_add_match_ok->{
                     if(lowestTier == 0 || highestTier == 0){
                         addMatchingFragment.getBinding().txtTier.text = "모두 가능"
                     }
                     else{
-                        addMatchingFragment.getBinding().txtTier.text = (getTier(gameName,lowestTier)+" 이상 " + getTier(gameName,highestTier) + " 이하")
+                        addMatchingFragment.getBinding().txtTier.text = (getTier(gameName,lowestTier-1)+" 이상 " + getTier(gameName,highestTier-1) + " 이하")
                     }
                 }
             }
             (activity as MainActivity).supportFragmentManager.popBackStack()
-            return@setOnMenuItemClickListener true
+            true
         }
-    }
-
-    private fun returnToolbar(){
-        val toolbar = (activity as MainActivity).getBinding().toolbarMain
-        toolbar.navigationIcon = null
-        toolbar.setNavigationOnClickListener {  }
-        toolbar.menu.clear()
-        (activity as MainActivity).getBinding().toolbarMainTitle.text =""
+        (activity as MainActivity).setToolbar(R.menu.menu_add_matching,menuListener,"참가자 티어",R.drawable.ic_toolbar_navigation)
     }
 
     private fun setRadioButtonText(gameName: String){

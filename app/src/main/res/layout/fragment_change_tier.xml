@@ -34,113 +34,138 @@
                 android:id="@+id/rg_low_tier"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp">
+                android:layout_gravity="start|left">
 
                 <RadioButton
                     android:id="@+id/rb_low_tier0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
                     android:button="@drawable/st_check_radio"
+                    android:gravity="start"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@drawable/st_check_radio_textcolor"/>
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp" />
+
                 <RadioButton
                     android:id="@+id/rb_low_tier1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="start|left"
+                    android:layout_weight="1"
                     android:button="@drawable/st_check_radio"
+                    android:gravity="start|left"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_low_tier8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
             </RadioGroup>
 
@@ -165,117 +190,132 @@
             <RadioGroup
                 android:id="@+id/rg_high_tier"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/rb_high_tier0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/st_check_radio"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
                 <RadioButton
                     android:id="@+id/rb_high_tier8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
                     android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:textColor="@color/black"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
             </RadioGroup>
         </LinearLayout>

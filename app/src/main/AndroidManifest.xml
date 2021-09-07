@@ -25,6 +25,8 @@
         <activity android:name=".onboarding.OnboardingActivity" />
         <activity android:name=".main.MainActivity" />
 
+
+
     </application>
 
 </manifest>

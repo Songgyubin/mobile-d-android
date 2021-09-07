@@ -16,18 +16,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.activityMain = this
         binding.bottomNavigationViewMain.setOnItemSelectedListener { menuItem: MenuItem ->
-            when(menuItem.itemId){
-                R.id.homeItem->{
-                    supportFragmentManager.beginTransaction().replace(binding.fragmentContainerViewMain.id,fragmentHome).commit()
+            when (menuItem.itemId) {
+                R.id.homeItem -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(binding.fragmentContainerViewMain.id, fragmentHome).commit()
                 }
-                R.id.myMatchItem->{
-                    supportFragmentManager.beginTransaction().replace(binding.fragmentContainerViewMain.id,fragmentMyMatch).commit()
+                R.id.myMatchItem -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(binding.fragmentContainerViewMain.id, fragmentMyMatch).commit()
                 }
-                R.id.myItem->{
-                    supportFragmentManager.beginTransaction().replace(binding.fragmentContainerViewMain.id,fragmentMy).commit()
+                R.id.myItem -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(binding.fragmentContainerViewMain.id, fragmentMy).commit()
                 }
             }
             return@setOnItemSelectedListener true

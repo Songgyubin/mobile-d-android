@@ -15,13 +15,22 @@
 
         <RadioButton
             android:id="@+id/rb_man"
-            android:layout_width="wrap_content"
+            android:background="@drawable/selector_radio_background"
+            android:textColor="#ffffff"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:button="@null"
             android:layout_height="wrap_content"
             android:text="남" />
 
         <RadioButton
             android:id="@+id/rb_woman"
-            android:layout_width="wrap_content"
+            android:background="@drawable/selector_radio_background"
+            android:layout_width="100dp"
+            android:gravity="center"
+            android:layout_marginLeft="25dp"
+            android:button="@null"
+            android:textColor="#ffffff"
             android:layout_height="wrap_content"
             android:text="여" />
 
@@ -33,6 +42,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="150dp"
+        android:text="확인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_age"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

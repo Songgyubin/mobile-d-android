@@ -47,7 +47,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initButton() {
-        binding.btnGoogleLogin.setOnClickListener { getToken() }
+//        binding.btnGoogleLogin.setOnClickListener { getToken() }
+        binding.btnGoogleLogin.setOnClickListener {
+//            signIn("4%2F0AX4XfWgPRNBXe6_Q09FzP28x3dySDblIYVKcGbOfVjJc1sSF8SYCw34QX5xyA2vhB3leXA&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile")
+
+            startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
+        }
+
     }
 
     private fun getToken() {
@@ -56,18 +62,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun signIn(token: String) {
-        val result: Call<Void> =
+        val result: Call<JsonObject> =
             RetrofitClient.getInstance().buildRetrofit().getLoginInfo(token)
-        result.enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+        result.enqueue(object : Callback<JsonObject> {
+            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                 val body = response.body()
                 joinLog(TAG, "success: ${body.toString()}")
 
                 startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
-
             }
 
-            override fun onFailure(call: Call<Void>, t: Throwable) {
+            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 joinLog(TAG, "error: ${t.message}")
             }
 

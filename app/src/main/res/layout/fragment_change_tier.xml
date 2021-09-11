@@ -48,8 +48,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -65,8 +66,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -79,8 +81,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -93,8 +96,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -107,8 +111,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -121,8 +126,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -135,8 +141,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -149,8 +156,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -163,8 +171,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
             </RadioGroup>
@@ -201,8 +210,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -215,8 +225,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -229,8 +240,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -243,8 +255,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -257,8 +270,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -271,8 +285,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -285,8 +300,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -299,8 +315,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
 
@@ -313,8 +330,9 @@
                     android:minWidth="0dp"
                     android:minHeight="0dp"
                     android:paddingLeft="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
                     android:textColor="@drawable/st_check_radio_textcolor"
                     android:textSize="13sp" />
             </RadioGroup>

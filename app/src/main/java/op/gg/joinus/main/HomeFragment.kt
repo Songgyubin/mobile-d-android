@@ -63,6 +63,7 @@ class HomeFragment : Fragment() {
             true
         }
         (activity as MainActivity).setToolbar(R.menu.menu_home,menuListener)
+        (activity as MainActivity).setToolbarGameList()
     }
 
 

@@ -26,6 +26,9 @@
                 android:id="@+id/toolbar_main_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:dropDownWidth="match_parent"
+                android:textColor="@color/black"
                 android:visibility="gone" />
             <TextView
                 android:id="@+id/toolbar_main_title"

@@ -1,6 +1,7 @@
 package op.gg.joinus.main
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import op.gg.joinus.R
+import op.gg.joinus.chat.ChatActivity
 import op.gg.joinus.databinding.FragmentRoomJoinBinding
 import op.gg.joinus.util.getTier
 import op.gg.joinus.util.joinLog
@@ -95,7 +97,9 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
 
     private fun setButton(){
         binding.btnDialogRoomJoin.setOnClickListener {
+            var i = Intent(context,ChatActivity::class.java)
 
+            startActivity(i)
         }
     }
 }

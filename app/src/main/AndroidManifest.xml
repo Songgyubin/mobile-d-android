@@ -26,8 +26,6 @@
         <activity android:name=".main.MainActivity" />
         <activity android:name=".chat.ChatActivity" />
 
-
-
     </application>
 
 </manifest>

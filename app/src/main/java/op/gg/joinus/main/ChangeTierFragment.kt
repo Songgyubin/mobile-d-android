@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.get
@@ -19,12 +20,19 @@ import op.gg.joinus.databinding.FragmentChangeTierBinding
 import op.gg.joinus.util.getTier
 import op.gg.joinus.util.joinLog
 import java.util.*
+import kotlin.reflect.typeOf
 
 // 임시로 이전 fragment 를 매개변수로 받음 (수정사항)
-class ChangeTierFragment(private val gameName:String, private val fragment:AddMatchingFragment) : Fragment() {
+class ChangeTierFragment(private val gameName:String, private val result: TextView) : Fragment() {
     private lateinit var binding:FragmentChangeTierBinding
     private var highestTier: Int = 0
     private var lowestTier: Int = 0
+
+    var toolbarSet:ToolbarSetting? = null
+
+    interface ToolbarSetting{
+        fun toolbarSet()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,20 +87,20 @@ class ChangeTierFragment(private val gameName:String, private val fragment:AddMa
     }
 
     override fun onDestroy() {
-        fragment.setToolbar()
+        toolbarSet!!.toolbarSet()
         super.onDestroy()
     }
 
     private fun setToolbar(){
         val menuListener = Toolbar.OnMenuItemClickListener { item ->
-            val addMatchingFragment = fragment
+            toolbarSet!!.toolbarSet()
             when(item.itemId){
                 R.id.item_add_match_ok->{
                     if(lowestTier == 0 || highestTier == 0){
-                        addMatchingFragment.getBinding().txtTier.text = "모두 가능"
+                        result.text = "모두 가능"
                     }
                     else{
-                        addMatchingFragment.getBinding().txtTier.text = (getTier(gameName,lowestTier-1)+" 이상 " + getTier(gameName,highestTier-1) + " 이하")
+                        result.text = (getTier(gameName,lowestTier-1)+" 이상 " + getTier(gameName,highestTier-1) + " 이하")
                     }
                 }
             }

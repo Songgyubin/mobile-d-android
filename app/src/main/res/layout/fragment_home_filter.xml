@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="fragment_home_filter"
@@ -29,85 +30,34 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <RadioGroup
-                android:id="@+id/rg_tier"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rb_tier0"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/txt_tier"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0"
+                    android:text="@string/txt_add_matching_tier_all"
+                    android:textColor="@color/black_60"
+                    android:textSize="15sp" />
 
-                <RadioButton
-                    android:id="@+id/rb_tier1"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/btn_change_tier"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_tier2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_tier3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_tier4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_tier5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-            </RadioGroup>
+                    android:layout_weight="0"
+                    android:text="@string/btn_add_matching_tier"
+                    android:textColor="@color/floating_background"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
             <View
                 android:id="@+id/view2"
@@ -130,57 +80,75 @@
             <RadioGroup
                 android:id="@+id/rg_startDate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/rb_startDate0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="모두"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
                 <RadioButton
                     android:id="@+id/rb_startDate1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="오늘"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
                 <RadioButton
                     android:id="@+id/rb_startDate2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="내일"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
                 <RadioButton
                     android:id="@+id/rb_startDate3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="2일 이후"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
             </RadioGroup>
 
@@ -205,45 +173,58 @@
             <RadioGroup
                 android:id="@+id/rg_voice"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp">
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rb_voice_all"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="모두"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
                 <RadioButton
                     android:id="@+id/rb_voice_yes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="유"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
                 <RadioButton
                     android:id="@+id/rb_voice_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:button="@null"
+                    android:button="@drawable/st_check_radio"
+                    android:layoutDirection="rtl"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:text="RadioButton"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="200dp"
+                    android:paddingBottom="8dp"
+                    android:text="무"
+                    android:textColor="@drawable/st_check_radio_textcolor"
+                    android:textSize="13sp"
+                    app:buttonTint="@null" />
 
             </RadioGroup>
         </LinearLayout>

@@ -9,7 +9,6 @@ import retrofit2.http.*
 
 import com.google.gson.JsonObject
 import op.gg.joinus.model.OnboardInfo
-import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.PUT
@@ -26,6 +25,9 @@ interface RetrofitService {
 
     @GET("api/room/?")
     fun getRoom(): Call<List<RoomInfo>>
+
+    @GET("api/room/{room_pk}")
+    fun getRoomInfo(@Path("room_pk") room_pk:Int): Call<RoomInfo>
 
     @POST("api/room")
     fun postRoom(@Body roomCreate : RoomCreate):Call<Int>

@@ -22,12 +22,12 @@ import java.util.*
 import android.view.LayoutInflater
 import androidx.appcompat.widget.Toolbar
 import op.gg.joinus.databinding.DialogCheckMatchingBinding
+import op.gg.joinus.util.getTierByName
 
 
 class AddMatchingFragment: Fragment() {
     private lateinit var binding:FragmentAddMatchingBinding
     private lateinit var calendar:Calendar
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,22 +53,46 @@ class AddMatchingFragment: Fragment() {
         super.onStop()
     }
 
-    fun setToolbar(){
+    private fun setToolbar(){
         val menuListener = Toolbar.OnMenuItemClickListener { item ->
             when(item!!.itemId){
                 R.id.item_add_match_ok->{
-                    val game_name: String = "league of legends"
-                    // + tier 변경 추가, user_pk값 클라이언트에서 받아오기, game_name when으로 구분하기
-                    val highest_tier: Int = 0
+                    // set gameName
+                    var game_name: String = "league of legends"
+                    when(binding.rgGame.checkedRadioButtonId){
+                        R.id.rb_game_lol ->{
+                            game_name =  "league of legends"
+                        }
+                    }
+                    // set tier
+                    var highest_tier: Int = 0
+                    var lowest_tier: Int = 0
+                    if (binding.txtTier.text == "모두 가능"){
+                        when(game_name){
+                            "league of legends"->{
+                                lowest_tier = 0
+                                highest_tier = 7
+                            }
+                        }
+                    }
+                    else{
+                        val tierArr = binding.txtTier.text.split(" ")
+                        lowest_tier = getTierByName(game_name,tierArr[0])
+                        highest_tier= getTierByName(game_name,tierArr[2])
+                    }
+                    // + user_pk값 클라이언트에서 받아오기
                     val user_pk: Int= 1
-                    val lowest_tier: Int = 0
+                    // set PeopleNumber
                     val people_number: Int = binding.txtNumPeople.text.toString().toInt()
+                    // set RoomName
                     val room_name: String = binding.ptTitle.text.toString()
+                    // set startDate
                     val start_date = (
                             calendar.get(Calendar.YEAR).toString() + "-" + (calendar.get(Calendar.MONTH)+1).toString() + "-" +
                                     calendar.get(Calendar.DAY_OF_MONTH).toString() + " " +calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":00")
+                    // set voiceEnable
                     val voice_chat: Boolean = binding.rbVoiceYes.isChecked
-                    if (room_name == ""){
+                    if (room_name == "" || (lowest_tier > highest_tier)){
                         val builder = Dialog(requireContext())
                         val bindingDialog: DialogCheckMatchingBinding = DataBindingUtil.inflate(
                             LayoutInflater.from(
@@ -100,8 +124,6 @@ class AddMatchingFragment: Fragment() {
                         })
                         (activity as MainActivity).supportFragmentManager.popBackStack()
                     }
-                }
-                else ->{
                 }
             }
             true
@@ -180,15 +202,17 @@ class AddMatchingFragment: Fragment() {
                 }
             }
             (activity as MainActivity).resetToolbar()
-            val changeTierFragment = ChangeTierFragment(gameName,this)
+            val changeTierFragment = ChangeTierFragment(gameName,binding.txtTier)
+            changeTierFragment.toolbarSet = object : ChangeTierFragment.ToolbarSetting{
+                override fun toolbarSet(){
+                    setToolbar()
+                }
+            }
             parentFragmentManager.beginTransaction()
                 .hide(this)
                 .add(R.id.fragmentContainerView_main,changeTierFragment)
                 .addToBackStack(null)
                 .commit()
         }
-    }
-    fun getBinding():FragmentAddMatchingBinding{
-        return binding
     }
 }

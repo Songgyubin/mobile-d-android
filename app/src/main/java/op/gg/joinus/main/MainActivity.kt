@@ -1,10 +1,15 @@
 package op.gg.joinus.main
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
@@ -39,7 +44,38 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
+    fun setToolbarGameList(){
+        val gameArray = resources.getStringArray(R.array.game_array)
+        val adapter = object:ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,gameArray){
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val cv = super.getView(position, convertView, parent)
+                cv.findViewById<TextView>(android.R.id.text1).setTextColor(Color.BLACK)
+                return cv
+            }
+        }
+        adapter.setDropDownViewResource(R.layout.item_game_spinner)
+        binding.toolbarMainSpinner.adapter = adapter
+        binding.toolbarMainSpinner.visibility = View.VISIBLE
+        //binding.toolbarMainSpinner.adapter = adapter
+        binding.toolbarMainSpinner.setSelection(0)
 
+        //+ spinner event 추가
+        binding.toolbarMainSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+        }
+    }
     fun setToolbar(title:String,navigationButtonId:Int){
         binding.toolbarMainTitle.text = title
         val toolbar = binding.toolbarMain
@@ -67,6 +103,7 @@ class MainActivity : AppCompatActivity() {
 
     fun resetToolbar(){
         val toolbar = binding.toolbarMain
+        binding.toolbarMainSpinner.visibility = View.GONE
         toolbar.navigationIcon = null
         toolbar.setNavigationOnClickListener {  }
         toolbar.menu.clear()

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="game_array">
+        <item>리그오브레전드</item>
+        <item>오버워치</item>
+    </string-array>
+</resources>

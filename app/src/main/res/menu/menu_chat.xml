@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_chat_show_people"
+        android:icon="@drawable/ic_chatting_user"
+        android:title="people"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_chat_show_action"
+        android:icon="@drawable/ic_chat_extra"
+        android:title="action"
+        app:showAsAction="always" />
+</menu>

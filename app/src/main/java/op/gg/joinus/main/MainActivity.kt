@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         //binding.toolbarMainSpinner.adapter = adapter
         binding.toolbarMainSpinner.setSelection(0)
 
+        //+ spinner event 추가
         binding.toolbarMainSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,

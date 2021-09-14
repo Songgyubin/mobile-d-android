@@ -17,13 +17,14 @@
             android:id="@+id/toolbar_chat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:background="@color/white"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
 
             <TextView
                 android:id="@+id/toolbar_chat_room_title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/black" />
@@ -76,11 +77,10 @@
             android:layout_height="1dp"
             android:background="@color/black_30" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="op.gg.joinus.chat.ChatRoomFragment"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_chatting_room"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <View
@@ -91,7 +91,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="68dp">
+            android:layout_height="68dp"
+            android:layout_weight="0">
 
             <LinearLayout
                 android:layout_width="match_parent"

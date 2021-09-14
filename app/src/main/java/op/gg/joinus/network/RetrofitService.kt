@@ -26,6 +26,9 @@ interface RetrofitService {
     @GET("api/room/?")
     fun getRoom(): Call<List<RoomInfo>>
 
+    @GET("api/room/{room_pk}")
+    fun getRoomInfo(@Path("room_pk") room_pk:Int): Call<RoomInfo>
+
     @POST("api/room")
     fun postRoom(@Body roomCreate : RoomCreate):Call<Int>
 }

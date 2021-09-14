@@ -98,7 +98,7 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
     private fun setButton(){
         binding.btnDialogRoomJoin.setOnClickListener {
             var i = Intent(context,ChatActivity::class.java)
-
+            i.putExtra("room_pk",item.room.pk)
             startActivity(i)
         }
     }

@@ -45,9 +45,11 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
-    fun setToolbarGameList(){
+
+    fun setToolbarGameList() {
         val gameArray = resources.getStringArray(R.array.game_array)
-        val adapter = object:ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,gameArray){
+        val adapter = object :
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, gameArray) {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val cv = super.getView(position, convertView, parent)
                 cv.findViewById<TextView>(android.R.id.text1).setTextColor(Color.BLACK)
@@ -61,27 +63,25 @@ class MainActivity : AppCompatActivity() {
         binding.toolbarMainSpinner.setSelection(0)
 
         //+ spinner event 추가
-        binding.toolbarMainSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
+        binding.toolbarMainSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
 
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
             }
-
+    }
 
     fun setToolbar(title: String, navigationButtonId: Int) {
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-        }
-    }
-    fun setToolbar(title:String,navigationButtonId:Int){
-      
         binding.toolbarMainTitle.text = title
         val toolbar = binding.toolbarMain
         toolbar.setNavigationIcon(navigationButtonId)

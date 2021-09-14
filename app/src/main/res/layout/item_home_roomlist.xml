@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="home_roomlist_item"
             type="op.gg.joinus.main.HomeRoomListItem" />

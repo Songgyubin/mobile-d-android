@@ -16,6 +16,11 @@ class OnboardingFragment1 : Fragment() {
 
     private lateinit var binding: FragmentOnboarding1Binding
     private lateinit var mContext: Context
+    private lateinit var onboardActivity: OnboardingActivity
+
+    private var gender = 0
+    private var age = 0
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
@@ -28,15 +33,39 @@ class OnboardingFragment1 : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding_1, container, false)
-        binding.btnConfirm.setOnClickListener {
-            (activity as OnboardingActivity).replaceFragment(1)
-        }
-        val age = resources.getStringArray(R.array.planets_array)
-        val adapter = ArrayAdapter(mContext, android.R.layout.simple_spinner_item, age)
-        binding.spinnerAge.adapter = adapter
+        onboardActivity = activity as OnboardingActivity
+
+        initButton()
+        initNumberPicker()
 
         return binding.root
     }
+
+    private fun initButton() {
+        binding.btnConfirm.setOnClickListener {
+            onboardActivity.age = age
+            onboardActivity.gender = gender
+            (activity as OnboardingActivity).replaceFragment(1)
+        }
+        binding.rgGender.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.rb_man -> gender = 0
+                R.id.rb_woman -> gender = 1
+            }
+
+        }
+
+
+    }
+
+    private fun initNumberPicker() {
+        binding.npAge.apply {
+            this.maxValue = 50
+            this.minValue = 20
+            this.value = 25
+        }
+    }
+
 
     override fun onResume() {
         super.onResume()

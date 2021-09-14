@@ -7,9 +7,20 @@ import androidx.databinding.DataBindingUtil
 import com.google.firebase.FirebaseApp
 import op.gg.joinus.R
 import op.gg.joinus.databinding.ActivityOnboardingBinding
+import op.gg.joinus.model.OnboardInfo
 
 class OnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding
+
+    // 0이면 남자 1이면 여자
+    var gender = 0
+    var age = 0
+    var gameName = 0
+    var nickName = ""
+    var gameTier = ""
+    var imageAddress = ""
+    var sub = ""
+    private lateinit var onboardInfo: OnboardInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +35,13 @@ class OnboardingActivity : AppCompatActivity() {
             this.commit()
         }
     }
+
+    fun setOnboardInfo() {
+        onboardInfo = OnboardInfo(age, "", gender, "", nickName, sub)
+    }
+
+    fun getOnboardInfo(): OnboardInfo = onboardInfo
+
 
     fun replaceFragment(fragmentIndex: Int) {
         supportFragmentManager.beginTransaction().run {

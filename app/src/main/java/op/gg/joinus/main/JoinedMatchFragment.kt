@@ -8,16 +8,26 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import op.gg.joinus.R
 import op.gg.joinus.databinding.FragmentMymatchJoinedMatchingBinding
 import op.gg.joinus.databinding.FragmentOnboarding1Binding
+import op.gg.joinus.model.RoomInfo
+import op.gg.joinus.network.RetrofitClient
 import op.gg.joinus.onboarding.OnboardingActivity
+import op.gg.joinus.util.SharedPreferenceManager
 import op.gg.joinus.util.joinLog
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class JoinedMatchFragment : Fragment() {
 
     private lateinit var binding: FragmentMymatchJoinedMatchingBinding
     private lateinit var mContext: Context
+    private lateinit var roomListAdapter: HomeRoomListAdapter
+
+    private var sub: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +41,90 @@ class JoinedMatchFragment : Fragment() {
                 container,
                 false
             )
-        joinLog(TAG,"create")
+
+        sub = SharedPreferenceManager.getString(mContext, "sub")
+
+        initView()
+        initListener()
+
         return binding.root
     }
+
+    private fun initView() {
+        binding.recyclerJoined.apply {
+            this.layoutManager = LinearLayoutManager(mContext)
+        }
+        roomListAdapter = HomeRoomListAdapter(mContext)
+        binding.recyclerJoined.adapter = roomListAdapter
+
+        //set layoutNoMatchingRoom
+        if (roomListAdapter.itemCount != 0) {
+            binding.layoutNoMatchingRoom.visibility = View.GONE
+        }
+
+        sub?.let { getJoinedMatchRoom(it) }
+    }
+
+    private fun initListener() {
+        //set Adapter click listener
+        roomListAdapter.setOnItemClickListner(object : HomeRoomListAdapter.OnItemClickListener {
+            override fun onItemClick(item: HomeRoomListItem) {
+                val roomJoinFragment = RoomJoinFragment(item)
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView_main, roomJoinFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+        })
+
+        //set swipeRefreshLayout listener
+        binding.srlJoinedMatching.setOnRefreshListener {
+            sub?.let {
+                getJoinedMatchRoom(it)
+            }
+        }
+    }
+
+    /**
+     * 참여한 방
+     * myroom = 0
+     */
+    private fun getJoinedMatchRoom(sub: String) {
+        val result: Call<List<RoomInfo>> =
+            RetrofitClient.getInstance().buildRetrofit().getMatchedRoom(sub, 0)
+        result.enqueue(object : Callback<List<RoomInfo>> {
+            override fun onResponse(
+                call: Call<List<RoomInfo>>,
+                response: Response<List<RoomInfo>>
+            ) {
+                if (!response.isSuccessful) {
+                    joinLog("response err", response.body().toString())
+                    binding.srlJoinedMatching.isRefreshing = false
+                }
+
+                if (response.body().isNullOrEmpty()) {
+                    binding.layoutNoMatchingRoom.visibility = View.VISIBLE
+                } else {
+                    binding.layoutNoMatchingRoom.visibility = View.GONE
+                    response.body()!!.map { HomeRoomListItem(it) }.let { homeRoomListItem ->
+                        roomListAdapter.let { adapter ->
+                            adapter.itemList = homeRoomListItem
+                            adapter.notifyDataSetChanged()
+                        }
+                    }
+                }
+
+                binding.srlJoinedMatching.isRefreshing = false
+            }
+
+            override fun onFailure(call: Call<List<RoomInfo>>, t: Throwable) {
+                joinLog(TAG, "error: ${t.message}")
+                binding.srlJoinedMatching.isRefreshing = false
+            }
+
+        })
+    }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -42,6 +133,7 @@ class JoinedMatchFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
         joinLog(TAG, "onResume")
     }
 

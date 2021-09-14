@@ -13,6 +13,7 @@ import op.gg.joinus.util.joinLog
 
 class OnboardingFragment3 : Fragment() {
     private lateinit var binding: FragmentOnboarding3Binding
+    private lateinit var onboardActivity: OnboardingActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,13 +22,18 @@ class OnboardingFragment3 : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding_3, container, false)
-        binding.btnConfirm.setOnClickListener {
-            (activity as OnboardingActivity).replaceFragment(3)
-        }
+        onboardActivity = activity as OnboardingActivity
+        initButton()
 
         return binding.root
     }
 
+    private fun initButton() {
+        binding.btnConfirm.setOnClickListener {
+            onboardActivity.nickName = binding.edId.text.toString()
+            (activity as OnboardingActivity).replaceFragment(3)
+        }
+    }
 
     override fun onResume() {
         super.onResume()

@@ -63,6 +63,7 @@ class HomeFragment : Fragment() {
             true
         }
         (activity as MainActivity).setToolbar(R.menu.menu_home,menuListener)
+        (activity as MainActivity).setToolbarGameList()
     }
 
 
@@ -125,8 +126,10 @@ class HomeFragment : Fragment() {
                 }
                 joinLog("response",response.body().toString())
                 val tempList = mutableListOf<HomeRoomListItem>()
-                for (i in response.body()!!){
-                    tempList.add(HomeRoomListItem(i))
+                if(response.body() != null){
+                    for (i in response.body()!!){
+                        tempList.add(HomeRoomListItem(i))
+                    }
                 }
                 roomListAdapter.itemList = tempList.toList()
                 roomListAdapter.notifyDataSetChanged()

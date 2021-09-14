@@ -1,12 +1,9 @@
 package op.gg.joinus.main
 
-import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.recyclerview.widget.RecyclerView
-import op.gg.joinus.R
 import op.gg.joinus.databinding.ItemHomeRoomlistBinding
 
 class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<HomeRoomListAdapter.MyViewHolder>() {

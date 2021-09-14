@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chat_room_people"
+            type="op.gg.joinus.chat.ChatRoomItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/img_people"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:imageUrl="@{chat_room_people.imgPeople}" />
+
+        <TextView
+            android:id="@+id/txt_people_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0"
+            android:text="@{chat_room_people.name}"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/txt_room_host"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="방장"
+            android:textColor="#FF008C"
+            android:textSize="11sp"
+            android:visibility="@{chat_room_people.vis}" />
+
+        <Button
+            android:id="@+id/btn_chat_room_delete"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_toolbar_navigation_exit"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+</layout>

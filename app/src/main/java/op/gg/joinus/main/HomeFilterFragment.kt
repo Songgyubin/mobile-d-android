@@ -21,7 +21,7 @@ class HomeFilterFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_filter,container,false)
-
+        initListener()
         return binding.root
     }
 
@@ -38,7 +38,25 @@ class HomeFilterFragment: Fragment() {
         super.onStop()
     }
 
-    private fun setToolbar(){
+    fun setToolbar(){
         (activity as MainActivity).setToolbar("매칭 필터",R.drawable.ic_toolbar_navigation)
+    }
+    private fun initListener(){
+        binding.btnChangeTier.setOnClickListener {
+            var gameName = "league of legends"
+
+            (activity as MainActivity).resetToolbar()
+            val changeTierFragment = ChangeTierFragment(gameName,binding.txtTier)
+            changeTierFragment.toolbarSet = object : ChangeTierFragment.ToolbarSetting{
+                override fun toolbarSet(){
+                    setToolbar()
+                }
+            }
+            parentFragmentManager.beginTransaction()
+                .hide(this)
+                .add(R.id.fragmentContainerView_main,changeTierFragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }

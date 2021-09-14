@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#66111111"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:src="@drawable/my_profile"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_profile"
+            app:layout_constraintLeft_toRightOf="@+id/ib_profile"
+            app:layout_constraintTop_toTopOf="@+id/ib_profile"
+            tools:text="thd0427" />
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/btn_round_rectangle"
+            android:textSize="13sp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_profile"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ib_profile"
+            tools:text="프로필 수정" />
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#66111111"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_profile" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/const_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_2">
+
+            <TextView
+                android:id="@+id/tv_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="내 게임"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_game"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_game_lol"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_game" />
+
+            <TextView
+                android:id="@+id/tv_game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toRightOf="@+id/iv_game"
+                app:layout_constraintTop_toTopOf="@+id/iv_game"
+                tools:text="리그오브레전드" />
+
+            <TextView
+                android:id="@+id/tv_tier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/black_30"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toRightOf="@+id/iv_game"
+                app:layout_constraintTop_toBottomOf="@+id/tv_game_name"
+                tools:text="실버" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/const_1"
+            app:layout_constraintTop_toBottomOf="@id/view_2">
+
+            <TextView
+                android:id="@+id/tv_manner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="매너도"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_manner">
+
+                <RadioButton
+                    android:id="@+id/ib_manner_0"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_radio_button_manner_0"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/ib_manner_1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_radio_button_manner_1"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/ib_manner_2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_radio_button_manner_2"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/ib_manner_3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_radio_button_manner_3"
+                    android:button="@null" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_notice"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#66007Aff"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="* 매너도는 매칭 후 팀원평가를 통해 단계가 결정됩니다.\n* 첫매너도는 2단계에서 시작됩니다."
+            app:layout_constraintTop_toBottomOf="@+id/const_2" />
+
+        <View
+            android:id="@+id/view_3"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="15dp"
+            android:background="#66111111"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notice" />
+
+        <Button
+            android:id="@+id/btn_friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:drawableEnd="@drawable/arrow"
+            android:drawableRight="@drawable/arrow"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="친구목록"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:backgroundTint="#ffffff"
+            app:layout_constraintTop_toBottomOf="@id/view_3" />
+
+        <Button
+            android:id="@+id/btn_manage_black_list"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:drawableEnd="@drawable/arrow"
+            android:drawableRight="@drawable/arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="블랙리스트 관리"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:backgroundTint="#ffffff"
+            app:layout_constraintTop_toBottomOf="@id/btn_friends_list" />
+
+        <Button
+            android:id="@+id/btn_manage_google"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:drawableEnd="@drawable/arrow"
+            android:drawableRight="@drawable/arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="구글계정 관리"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:backgroundTint="#ffffff"
+            app:layout_constraintTop_toBottomOf="@id/btn_manage_black_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

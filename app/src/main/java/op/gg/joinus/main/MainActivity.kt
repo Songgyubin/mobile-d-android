@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val fragmentHome: HomeFragment = HomeFragment()
     private val fragmentMyMatch: MyMatchFragment = MyMatchFragment()
     private val fragmentMy: MyFragment = MyFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
@@ -70,6 +71,9 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+
+    fun setToolbar(title: String, navigationButtonId: Int) {
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
@@ -77,45 +81,53 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun setToolbar(title:String,navigationButtonId:Int){
+      
         binding.toolbarMainTitle.text = title
         val toolbar = binding.toolbarMain
         toolbar.setNavigationIcon(navigationButtonId)
         toolbar.setNavigationOnClickListener {
             supportFragmentManager.popBackStack()
         }
-    }
-    fun setToolbar(menuId:Int, menuClickListener: Toolbar.OnMenuItemClickListener){
-        val toolbar = binding.toolbarMain
-        toolbar.inflateMenu(menuId)
-        toolbar.setOnMenuItemClickListener(menuClickListener)
-    }
-    fun setToolbar(menuId:Int, menuClickListener: Toolbar.OnMenuItemClickListener, title:String, navigationButtonId:Int){
-        val toolbar = binding.toolbarMain
-        toolbar.setNavigationIcon(navigationButtonId)
-        toolbar.setNavigationOnClickListener {
-            supportFragmentManager.popBackStack()
-        }
-        toolbar.inflateMenu(menuId)
-        toolbar.setOnMenuItemClickListener(menuClickListener)
-        binding.toolbarMainTitle.text = title
-        binding.toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,17f)
     }
 
-    fun resetToolbar(){
+    fun setToolbar(menuId: Int, menuClickListener: Toolbar.OnMenuItemClickListener) {
+        val toolbar = binding.toolbarMain
+        toolbar.inflateMenu(menuId)
+        toolbar.setOnMenuItemClickListener(menuClickListener)
+    }
+
+    fun setToolbar(
+        menuId: Int,
+        menuClickListener: Toolbar.OnMenuItemClickListener,
+        title: String,
+        navigationButtonId: Int
+    ) {
+        val toolbar = binding.toolbarMain
+        toolbar.setNavigationIcon(navigationButtonId)
+        toolbar.setNavigationOnClickListener {
+            supportFragmentManager.popBackStack()
+        }
+        toolbar.inflateMenu(menuId)
+        toolbar.setOnMenuItemClickListener(menuClickListener)
+        binding.toolbarMainTitle.text = title
+        binding.toolbarMainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17f)
+    }
+
+    fun resetToolbar() {
         val toolbar = binding.toolbarMain
         binding.toolbarMainSpinner.visibility = View.GONE
         toolbar.navigationIcon = null
-        toolbar.setNavigationOnClickListener {  }
+        toolbar.setNavigationOnClickListener { }
         toolbar.menu.clear()
         binding.toolbarMainTitle.text = ""
     }
 
-    fun setBottomNavigationView(){
+    fun setBottomNavigationView() {
         val bottomNavigationView = binding.bottomNavigationViewMain
         bottomNavigationView.visibility = View.GONE
     }
 
-    fun returnBottomNavigationView(){
+    fun returnBottomNavigationView() {
         val bottomNavigationView = binding.bottomNavigationViewMain
         bottomNavigationView.visibility = View.VISIBLE
     }

@@ -24,10 +24,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
-
 class OnboardingFragment5 : Fragment() {
     private lateinit var binding: FragmentOnboarding5Binding
     private lateinit var mContext: Context
+    private lateinit var onboardActivity:OnboardingActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,9 +36,13 @@ class OnboardingFragment5 : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding_5, container, false)
+
+        onboardActivity = activity as OnboardingActivity
+
         initButton()
         initImageButton()
         getFirebaseToken()
+
         return binding.root
     }
 
@@ -48,7 +52,7 @@ class OnboardingFragment5 : Fragment() {
             if (task.isSuccessful) {
                 firebaseToken = task.result.token
                 firebaseToken?.let {
-                    putOnboardInfo(it)
+
                     joinLog(TAG, it)
                 }
 
@@ -58,7 +62,7 @@ class OnboardingFragment5 : Fragment() {
         }
     }
 
-    private fun putOnboardInfo(firebaseToken: String) {
+    private fun putOnboardInfo(onboardInfo: OnboardInfo) {
         val result: Call<JsonObject> =
             RetrofitClient.getInstance().buildRetrofit()
 //                .putOnboardInfo(OnboardInfo(0, firebaseToken, 0, "", "", ""))
@@ -81,7 +85,11 @@ class OnboardingFragment5 : Fragment() {
     }
 
     private fun initButton() {
+
+        onboardActivity.setOnboardInfo()
+
         binding.btnConfirm.setOnClickListener {
+            putOnboardInfo(onboardActivity.getOnboardInfo())
             startActivity(Intent(activity, MainActivity::class.java))
         }
     }

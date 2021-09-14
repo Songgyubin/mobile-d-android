@@ -16,6 +16,7 @@ import op.gg.joinus.databinding.ActivityLoginBinding
 import op.gg.joinus.model.UserInfo
 import op.gg.joinus.network.RetrofitClient
 import op.gg.joinus.onboarding.OnboardingActivity
+import op.gg.joinus.util.SharedPreferenceManager
 import op.gg.joinus.util.joinLog
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,9 +48,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initButton() {
+
 //        binding.btnGoogleLogin.setOnClickListener { getToken() }
         binding.btnGoogleLogin.setOnClickListener {
-//            signIn("4%2F0AX4XfWgPRNBXe6_Q09FzP28x3dySDblIYVKcGbOfVjJc1sSF8SYCw34QX5xyA2vhB3leXA&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile")
+            //            signIn("4%2F0AX4XfWgPRNBXe6_Q09FzP28x3dySDblIYVKcGbOfVjJc1sSF8SYCw34QX5xyA2vhB3leXA&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile")
+
+            // 임시값 ( sub == token )
+            SharedPreferenceManager.let {
+                it.setInt(this, "age", 21)
+                it.setString(this, "firebaseToken", "a")
+                it.setInt(this, "gender", 0)
+                it.setString(this, "imageAddress", "aa")
+                it.setBoolean(this, "login", true)
+                it.setString(this, "nickName", "aaa")
+                it.setInt(this, "pk", 0)
+                it.setString(this, "sub", "123")
+            }
 
             startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
         }
@@ -59,20 +73,25 @@ class LoginActivity : AppCompatActivity() {
     private fun getToken() {
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
+
     }
 
     private fun signIn(token: String) {
-        val result: Call<JsonObject> =
+        val result: Call<UserInfo> =
             RetrofitClient.getInstance().buildRetrofit().getLoginInfo(token)
-        result.enqueue(object : Callback<JsonObject> {
-            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+        result.enqueue(object : Callback<UserInfo> {
+            override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val body = response.body()
                 joinLog(TAG, "success: ${body.toString()}")
+                // TODO: 로그인 완료되면 데이터들 저장하기
+                // token = sub
+
+                SharedPreferenceManager.setString(this@LoginActivity,"sub",body!!.token)
 
                 startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
             }
 
-            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+            override fun onFailure(call: Call<UserInfo>, t: Throwable) {
                 joinLog(TAG, "error: ${t.message}")
             }
 

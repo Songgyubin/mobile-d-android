@@ -133,12 +133,14 @@ class HomeFragment : Fragment() {
                 }
                 roomListAdapter.itemList = tempList.toList()
                 roomListAdapter.notifyDataSetChanged()
+
                 if (roomListAdapter.itemCount != 0){
                     binding.layoutNoMatchingRoom.visibility = View.GONE
                 }
                 else{
                     binding.layoutNoMatchingRoom.visibility = View.VISIBLE
                 }
+
                 binding.srlHomeMatching.isRefreshing = false
             }
             override fun onFailure(call: Call<List<RoomInfo>>, t: Throwable) {

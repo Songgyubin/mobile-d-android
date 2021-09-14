@@ -15,6 +15,8 @@ import op.gg.joinus.util.joinLog
 class OnboardingFragment2 : Fragment() {
     private lateinit var binding: FragmentOnboarding2Binding
     private lateinit var mContext: Context
+    private lateinit var onboardActivity: OnboardingActivity
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,11 +24,19 @@ class OnboardingFragment2 : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding_2, container, false)
-        binding.btnConfirm.setOnClickListener {
-            (activity as OnboardingActivity).replaceFragment(2)
-        }
+        onboardActivity = activity as OnboardingActivity
+
+        initButton()
+
 
         return binding.root
+    }
+
+    private fun initButton() {
+        binding.btnConfirm.setOnClickListener {
+            //TODO: 라디오 버튼 게밈 정보 저장
+            (activity as OnboardingActivity).replaceFragment(2)
+        }
     }
 
     override fun onAttach(context: Context) {

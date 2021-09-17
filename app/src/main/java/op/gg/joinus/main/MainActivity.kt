@@ -17,7 +17,7 @@ import op.gg.joinus.R
 import op.gg.joinus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private val fragmentHome: HomeFragment = HomeFragment()
     private val fragmentMyMatch: MyMatchFragment = MyMatchFragment()
     private val fragmentMy: MyFragment = MyFragment()
@@ -45,9 +45,11 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
-    fun setToolbarGameList(){
+
+    fun setToolbarGameList() {
         val gameArray = resources.getStringArray(R.array.game_array)
-        val adapter = object:ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,gameArray){
+        val adapter = object :
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, gameArray) {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val cv = super.getView(position, convertView, parent)
                 cv.findViewById<TextView>(android.R.id.text1).setTextColor(Color.BLACK)
@@ -73,17 +75,26 @@ class MainActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
+                }
             }
         }
     }
-    fun setToolbar(title:String,navigationButtonId:Int){
-      
+
+    fun setToolbar(title: String, navigationButtonId: Int) {
+
         binding.toolbarMainTitle.text = title
         val toolbar = binding.toolbarMain
         toolbar.setNavigationIcon(navigationButtonId)
         toolbar.setNavigationOnClickListener {
             supportFragmentManager.popBackStack()
         }
+    }
+
+    fun setToolbar(menuId: Int, menuClickListener: Toolbar.OnMenuItemClickListener, title: String) {
+        binding.toolbarMainTitle.text = title
+        val toolbar = binding.toolbarMain
+        toolbar.inflateMenu(menuId)
+        toolbar.setOnMenuItemClickListener(menuClickListener)
     }
 
     fun setToolbar(menuId: Int, menuClickListener: Toolbar.OnMenuItemClickListener) {
@@ -126,6 +137,7 @@ class MainActivity : AppCompatActivity() {
     fun returnBottomNavigationView() {
         val bottomNavigationView = binding.bottomNavigationViewMain
         bottomNavigationView.visibility = View.VISIBLE
+
     }
 
 }

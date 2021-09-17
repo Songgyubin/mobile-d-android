@@ -29,9 +29,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivityLoginBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_JoinUs)
+        Thread.sleep(500)
+        setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
@@ -52,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
 //        binding.btnGoogleLogin.setOnClickListener { getToken() }
         binding.btnGoogleLogin.setOnClickListener {
             //            signIn("4%2F0AX4XfWgPRNBXe6_Q09FzP28x3dySDblIYVKcGbOfVjJc1sSF8SYCw34QX5xyA2vhB3leXA&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile")
-
             // 임시값 ( sub == token )
             SharedPreferenceManager.let {
                 it.setInt(this, "age", 21)
@@ -61,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                 it.setString(this, "imageAddress", "aa")
                 it.setBoolean(this, "login", true)
                 it.setString(this, "nickName", "aaa")
-                it.setInt(this, "pk", 0)
+                it.setInt(this, "pk", 1)
                 it.setString(this, "sub", "123")
             }
 
@@ -86,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                 // TODO: 로그인 완료되면 데이터들 저장하기
                 // token = sub
 
-                SharedPreferenceManager.setString(this@LoginActivity,"sub",body!!.token)
+                SharedPreferenceManager.setString(this@LoginActivity, "sub", body!!.token)
 
                 startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
             }

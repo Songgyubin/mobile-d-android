@@ -22,11 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".onboarding.OnboardingActivity" />
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:theme="@style/MainTheme"
+            />
         <activity android:name=".main.MainActivity" />
         <activity android:name=".chat.ChatActivity" />
         <activity android:name=".chat.MannerActivity" />
-
 
     </application>
 

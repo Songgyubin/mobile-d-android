@@ -13,6 +13,7 @@ import op.gg.joinus.util.joinLog
 
 class OnboardingFragment4 : Fragment() {
     private lateinit var binding: FragmentOnboarding4Binding
+    private lateinit var onboardActivity: OnboardingActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,15 +22,38 @@ class OnboardingFragment4 : Fragment() {
     ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding_4, container, false)
+        onboardActivity = activity as OnboardingActivity
         binding.btnConfirm.setOnClickListener {
             (activity as OnboardingActivity).replaceFragment(4)
         }
+        initRadioButton()
+        onboardActivity.setVisibleGameLogo(true)
         return binding.root
     }
+
+    private fun initRadioButton() {
+        binding.rgTier.setOnCheckedChangeListener { group, checkedId ->
+            (activity as OnboardingActivity).gameTier =
+                when (checkedId) {
+                    R.id.rb_tier_iron -> "iron"
+                    R.id.rb_tier_bronze -> "bronze"
+                    R.id.rb_tier_silver -> "silver"
+                    R.id.rb_tier_gold -> "gold"
+                    R.id.rb_tier_platinum -> "platinum"
+                    R.id.rb_tier_diamond -> "diamond"
+                    R.id.rb_tier_master -> "master"
+                    R.id.rb_tier_challenger -> "challenger"
+                    else -> ""
+                }
+            binding.btnConfirm.isEnabled = true
+        }
+    }
+
     override fun onResume() {
         super.onResume()
-        joinLog(TAG,"onResume")
+        joinLog(TAG, "onResume")
     }
+
     companion object {
         private const val TAG = "OnboardingFragment4"
     }

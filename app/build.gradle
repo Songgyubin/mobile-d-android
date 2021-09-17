@@ -41,8 +41,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -89,7 +89,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:22.0.0'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     //socket
-    implementation ('io.socket:socket.io-client:2.0.0') {
+    implementation('io.socket:socket.io-client:2.0.0') {
         exclude group: 'org.json', module: 'json'
     }
 

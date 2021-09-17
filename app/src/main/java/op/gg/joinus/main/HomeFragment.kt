@@ -161,7 +161,6 @@ class HomeFragment : Fragment() {
                 else{
                     binding.layoutNoMatchingRoom.visibility = View.VISIBLE
                 }
-
                 binding.srlHomeMatching.isRefreshing = false
             }
             override fun onFailure(call: Call<List<RoomInfo>>, t: Throwable) {

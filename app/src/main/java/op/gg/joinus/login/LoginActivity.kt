@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivityLoginBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(500)
         setTheme(R.style.MainTheme)
@@ -86,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                 // TODO: 로그인 완료되면 데이터들 저장하기
                 // token = sub
 
-                SharedPreferenceManager.setString(this@LoginActivity,"sub",body!!.token)
+                SharedPreferenceManager.setString(this@LoginActivity, "sub", body!!.token)
 
                 startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
             }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -10,6 +10,9 @@
             android:id="@+id/rg_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -17,7 +20,7 @@
             <RadioButton
                 android:id="@+id/rb_man"
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:background="@drawable/selector_radio_button"
                 android:button="@null"
                 android:gravity="center"
@@ -27,7 +30,7 @@
             <RadioButton
                 android:id="@+id/rb_woman"
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/selector_radio_button"
                 android:button="@null"
@@ -37,24 +40,42 @@
 
         </RadioGroup>
 
-        <NumberPicker
-            android:id="@+id/np_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btn_age_choice"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/selector_age_choice_custom"
+            android:drawableEnd="@drawable/arrow_bottom"
+            android:drawableRight="@drawable/arrow_bottom"
+            android:enabled="false"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="17dp"
+            android:text="나이를 선택해 주세요"
+            android:textColor="@color/black_60"
+            android:textSize="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
 
         <Button
             android:id="@+id/btn_confirm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/selector_btn_confirm"
+            android:gravity="center"
             android:text="확인"
+            android:textColor="@color/white"
+            android:enabled="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/np_age" />
+            app:layout_constraintTop_toBottomOf="@id/btn_age_choice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -11,65 +12,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent">
 
-            <RadioButton
-                android:id="@+id/rb_lol"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_game_lol"
-                android:button="@drawable/st_checked_game"
-                android:checked="true" />
-
-            <RadioButton
-                android:id="@+id/rb_over_watch"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/ic_game_ow"
-                android:button="@drawable/st_checked_game" />
-
-            <RadioButton
-                android:id="@+id/rb_sudden"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/ic_game_sa"
-                android:button="@drawable/st_checked_game" />
-
-
-            <RadioButton
-                android:id="@+id/rb_battle"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/ic_game_pubg"
-                android:button="@drawable/st_checked_game" />
-
-
-            <RadioButton
-                android:id="@+id/rb_maple"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/maple"
-                android:button="@drawable/st_checked_game" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/tv_notice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
             android:gravity="center"
             android:text="*나중에 마이페이지에서 게임을 추가할 수 있어요!"
-            android:textColor="@color/black_60"
             app:layout_constraintTop_toBottomOf="@id/rg_game_choice" />
 
         <Button
@@ -78,11 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="150dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/selector_btn_confirm"
             android:text="확인"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_notice" />
 

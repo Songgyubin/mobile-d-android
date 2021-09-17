@@ -34,6 +34,7 @@ class OnboardingFragment2 : Fragment() {
 
     private fun initButton() {
         binding.btnConfirm.setOnClickListener {
+            //TODO: 라디오 버튼 게밈 정보 저장
             (activity as OnboardingActivity).replaceFragment(2)
         }
     }

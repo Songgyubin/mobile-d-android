@@ -30,24 +30,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="thd0427"
             android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@+id/ib_profile"
             app:layout_constraintLeft_toRightOf="@+id/ib_profile"
-            app:layout_constraintTop_toTopOf="@+id/ib_profile" />
+            app:layout_constraintTop_toTopOf="@+id/ib_profile"
+            tools:text="thd0427" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/btn_round_rectangle"
-            android:text="프로필 수정"
             android:textSize="13sp"
+            app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="@+id/ib_profile"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ib_profile" />
+            app:layout_constraintTop_toTopOf="@+id/ib_profile"
+            tools:text="프로필 수정" />
 
         <View
             android:id="@+id/view_2"
@@ -99,11 +100,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
-                android:text="리그오브레전드"
                 android:textColor="@color/black"
                 android:textSize="13sp"
                 app:layout_constraintLeft_toRightOf="@+id/iv_game"
-                app:layout_constraintTop_toTopOf="@+id/iv_game" />
+                app:layout_constraintTop_toTopOf="@+id/iv_game"
+                tools:text="리그오브레전드" />
 
             <TextView
                 android:id="@+id/tv_tier"
@@ -111,11 +112,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
-                android:text="실버"
-                android:textColor="@color/black_60"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/black_30"
                 android:textSize="13sp"
                 app:layout_constraintLeft_toRightOf="@+id/iv_game"
-                app:layout_constraintTop_toBottomOf="@+id/tv_game_name" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_game_name"
+                tools:text="실버" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -174,7 +176,6 @@
                 <RadioButton
                     android:id="@+id/ib_manner_3"
                     android:layout_width="24dp"
-                    android:checked="true"
                     android:layout_height="24dp"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
@@ -194,7 +195,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="* 매너도는 매칭 후 팀원평가를 통해 단계가 결정됩니다.\n* 첫매너도는 2단계에서 시작됩니다."
-            app:layout_constraintTop_toBottomOf="@+id/const_1" />
+            app:layout_constraintTop_toBottomOf="@+id/const_2" />
 
         <View
             android:id="@+id/view_3"
@@ -214,7 +215,6 @@
             android:paddingStart="20dp"
             android:paddingLeft="20dp"
             android:text="친구목록"
-            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:backgroundTint="#ffffff"
@@ -229,7 +229,6 @@
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="블랙리스트 관리"
-            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:backgroundTint="#ffffff"
@@ -244,7 +243,6 @@
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="구글계정 관리"
-            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:backgroundTint="#ffffff"

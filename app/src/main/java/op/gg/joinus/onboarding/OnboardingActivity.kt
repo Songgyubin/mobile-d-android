@@ -1,7 +1,6 @@
 package op.gg.joinus.onboarding
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -15,8 +14,8 @@ class OnboardingActivity : AppCompatActivity() {
 
     // 0이면 남자 1이면 여자
     var gender = 0
-    private var age = 0
-    var gameName = "lol"
+    var age = 0
+    var gameName = 0
     var nickName = ""
     var gameTier = ""
     var imageAddress = ""
@@ -74,20 +73,6 @@ class OnboardingActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    fun setAge(age: Int) {
-        this.age = age
-    }
-
-    fun getAge(): Int = this.age
-
-    fun setVisibleGameLogo(visible: Boolean){
-        if (visible){
-            binding.ivLogoSymbolLol.visibility = View.VISIBLE
-        }else{
-            binding.ivLogoSymbolLol.visibility = View.GONE
-        }
     }
 
 

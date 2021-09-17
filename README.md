@@ -26,4 +26,4 @@ https://github.com/Songgyubin
 *****
 
 ## # 소개 영상
-
+https://youtu.be/F0Czi8IJsdE

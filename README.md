@@ -6,8 +6,8 @@
 - 제 1회 OP.GG 정보통신 써-비스 제작 경진대회 참가
 ## # Mobile-D
 ### 김웅일 `Designer` `UI/UX`
-### 성근제 `BackEnd` `SERVER`
-### 유지원 `BackEnd` `SERVER`
+### 성근제 `BackEnd` `Sever`
+### 유지원 `BackEnd` `Sever`
 ### 신찬익 `FrontEnd` `Android` `Kotlin`
 https://github.com/schan9788
 ### 송규빈 `FrontEnd` `Android` `Kotlin`

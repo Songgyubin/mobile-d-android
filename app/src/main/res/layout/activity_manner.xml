@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="activityManner"
+            type="op.gg.joinus.chat.MannerActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_13"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_manner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme">
+
+            <TextView
+                android:id="@+id/toolbar_manner_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="팀원들의 매너를 평가해 주세요"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_manner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* 즐겁게 플레이 하셨나요?\n   매너도를 평가해 주시면 매칭 정보에 반영됩니다. "
+                android:textColor="@color/black_60"
+                android:textSize="11sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_manner_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:background="@color/black_13"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_manner_ok"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/floating_background"
+                android:text="확인"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btn_manner_cancel"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/black_30"
+                android:text="넘어가기"
+                android:textColor="@color/black_60"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

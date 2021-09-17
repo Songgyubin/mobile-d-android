@@ -15,15 +15,27 @@
             android:id="@+id/fab_addMatching"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/ic_add_match_button"
             app:backgroundTint="@color/floating_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="@null"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/img_home_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            app:layout_constraintBottom_toTopOf="@+id/fab_addMatching"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_home_float_message" />
 
         <LinearLayout
             android:id="@+id/linearLayout"

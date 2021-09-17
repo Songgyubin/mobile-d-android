@@ -2,14 +2,11 @@ package op.gg.joinus.network
 
 
 import com.google.gson.JsonArray
-import op.gg.joinus.model.RoomCreate
-import op.gg.joinus.model.RoomInfo
 import retrofit2.Call
 import retrofit2.http.*
 
 import com.google.gson.JsonObject
-import op.gg.joinus.model.OnboardInfo
-import op.gg.joinus.model.UserInfo
+import op.gg.joinus.model.*
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.PUT
@@ -33,7 +30,12 @@ interface RetrofitService {
     @POST("api/room")
     fun postRoom(@Body roomCreate: RoomCreate): Call<Int>
 
+    @FormUrlEncoded
+    @POST("api/roomuser")
+    fun postRoomUser(@FieldMap param:HashMap<String,Int>): Call<Int>
 
+    @PUT("api/room")
+    fun putRoom(@Body roomInfo: RoomUpdate): Call<Int>
     /**
      * param myroom
      *  0: 만든 방 조회

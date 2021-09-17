@@ -7,6 +7,7 @@
 ## # Mobile-D
 ### 김웅일 `Designer` `UI/UX`
 ### 성근제 `BackEnd` `Sever`
+https://github.com/sungguenja
 ### 유지원 `BackEnd` `Sever`
 ### 신찬익 `FrontEnd` `Android` `Kotlin`
 https://github.com/schan9788

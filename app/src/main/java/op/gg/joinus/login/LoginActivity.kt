@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                 it.setString(this, "imageAddress", "aa")
                 it.setBoolean(this, "login", true)
                 it.setString(this, "nickName", "aaa")
-                it.setInt(this, "pk", 0)
+                it.setInt(this, "pk", 1)
                 it.setString(this, "sub", "123")
             }
 

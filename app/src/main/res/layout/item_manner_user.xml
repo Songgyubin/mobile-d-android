@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item_manner_user"
+            type="op.gg.joinus.chat.MannerItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item">
+
+        <TextView
+            android:id="@+id/txt_manner_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="@{item_manner_user.userName}"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_manner_item"
+            android:layout_width="210dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_manner_1"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:checked="@{item_manner_user.check}"
+                android:gravity="center_vertical|end"
+                android:paddingRight="17dp"
+                android:text="good"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_manner_2"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center_vertical|end"
+                android:paddingRight="17dp"
+                android:text="soso"
+                android:textColor="@color/white" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="3dp"
+            app:layout_constraintStart_toStartOf="@+id/rg_manner_item"
+            app:layout_constraintTop_toTopOf="@+id/rg_manner_item"
+            app:srcCompat="@drawable/ic_manner_3" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginLeft="128dp"
+            android:layout_marginTop="3dp"
+            app:layout_constraintStart_toStartOf="@+id/rg_manner_item"
+            app:layout_constraintTop_toTopOf="@+id/rg_manner_item"
+            app:srcCompat="@drawable/ic_manner_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

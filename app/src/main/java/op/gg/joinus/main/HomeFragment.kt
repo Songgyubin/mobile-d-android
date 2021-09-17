@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -82,6 +84,24 @@ class HomeFragment : Fragment() {
             binding.layoutNoMatchingRoom.visibility = View.GONE
         }
 
+        //set initMessage animation
+        val animDisappear = AnimationUtils.loadAnimation(requireContext(),R.anim.anim_fade_out)
+
+        animDisappear.setAnimationListener(object:Animation.AnimationListener{
+            override fun onAnimationStart(animation: Animation?) {
+
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                binding.imgHomeMessage.visibility = View.GONE
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+            }
+
+        })
+        binding.imgHomeMessage.animation = animDisappear
+
         //set List
         getRoomList()
     }
@@ -109,6 +129,7 @@ class HomeFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
     }
 
     //get RoomList from server

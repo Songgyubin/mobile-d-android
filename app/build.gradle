@@ -54,6 +54,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
+    // reactivex.rxjava2 => stomp lib implementation
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
+
     // retrofit
     def retrofitVer = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVer"
@@ -84,9 +87,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-core:19.0.1'
     implementation 'com.google.firebase:firebase-messaging:22.0.0'
-
+    implementation 'com.google.firebase:firebase-firestore-ktx'
     //socket
     implementation('io.socket:socket.io-client:2.0.0') {
         exclude group: 'org.json', module: 'json'
     }
+
+    //stomp
+    //implementation 'com.github.bishoybasily:stomp:Tag'
 }

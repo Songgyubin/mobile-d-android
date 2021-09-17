@@ -63,21 +63,21 @@ class MainActivity : AppCompatActivity() {
         binding.toolbarMainSpinner.setSelection(0)
 
         //+ spinner event 추가
-        binding.toolbarMainSpinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
+        binding.toolbarMainSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
 
-                }
+            }
 
-                override fun onNothingSelected(parent: AdapterView<*>?) {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
 
                 }
             }
+        }
     }
 
     fun setToolbar(title: String, navigationButtonId: Int) {

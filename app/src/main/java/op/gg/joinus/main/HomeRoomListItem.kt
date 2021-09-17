@@ -1,10 +1,18 @@
 package op.gg.joinus.main
 
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.DrawableWrapper
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.load.engine.Resource
+import op.gg.joinus.R
 import op.gg.joinus.model.RoomInfo
 import op.gg.joinus.util.diffCalendar
 import op.gg.joinus.util.joinLog
 import java.io.IOException
 import java.util.*
+import kotlin.coroutines.coroutineContext
+import kotlin.properties.Delegates
 
 data class HomeRoomListItem (
     var room: RoomInfo
@@ -14,7 +22,9 @@ data class HomeRoomListItem (
     lateinit var matchTime:String
     lateinit var numPeople:String
     lateinit var imgGame:String
+
     init{
+
         with(this){
 
             // set title

@@ -3,6 +3,7 @@ package op.gg.joinus.main
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.TypedValue
@@ -21,6 +22,8 @@ import retrofit2.Response
 import java.util.*
 import android.view.LayoutInflater
 import androidx.appcompat.widget.Toolbar
+import op.gg.joinus.chat.ChatActivity
+import op.gg.joinus.chat.MannerActivity
 import op.gg.joinus.databinding.DialogCheckMatchingBinding
 import op.gg.joinus.util.getTierByName
 
@@ -115,9 +118,12 @@ class AddMatchingFragment: Fragment() {
                                 if(!response.isSuccessful){
                                     joinLog("response err",response.body().toString())
                                 }
-                                joinLog("response",response.body().toString())
-                            }
+                                else{
+                                    joinLog("response",response.body().toString())
 
+                                }
+
+                            }
                             override fun onFailure(call: Call<Int>, t: Throwable) {
                                 joinLog("response fail",t.toString())
                             }

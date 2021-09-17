@@ -22,6 +22,13 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
 
+            <Button
+                android:id="@+id/toolbar_chat_btn_manner"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_manner_4"
+                app:backgroundTint="@null" />
             <TextView
                 android:id="@+id/toolbar_chat_room_title"
                 android:layout_width="wrap_content"
@@ -37,6 +44,7 @@
             android:background="@color/black_30" />
 
         <LinearLayout
+            android:id="@+id/layout_host_game_start"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:orientation="horizontal"
@@ -89,7 +97,47 @@
             android:layout_height="1dp"
             android:background="@color/black_30" />
 
+        <LinearLayout
+            android:id="@+id/fr_game_complete"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_game_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:text="* 게임이 완료되면 버튼을 눌러 주세요."
+                android:textColor="@color/black_60"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_game_complete"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="0"
+                android:background="@drawable/bg_rb_checked"
+                android:drawablePadding="@null"
+                android:includeFontPadding="false"
+                android:text="게임완료"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:iconPadding="@null" />
+        </LinearLayout>
+
         <FrameLayout
+            android:id="@+id/fr_chatting_bar"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_weight="0">

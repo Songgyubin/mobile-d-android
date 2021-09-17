@@ -8,6 +8,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
@@ -17,9 +18,15 @@ import com.bumptech.glide.Glide
 import op.gg.joinus.R
 import op.gg.joinus.chat.ChatActivity
 import op.gg.joinus.databinding.FragmentRoomJoinBinding
+import op.gg.joinus.model.RoomInfo
+import op.gg.joinus.network.RetrofitClient
+import op.gg.joinus.util.SharedPreferenceManager
 import op.gg.joinus.util.getTier
 import op.gg.joinus.util.joinLog
 import op.gg.joinus.util.setImg
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
 
 class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
@@ -97,9 +104,64 @@ class RoomJoinFragment(private val item: HomeRoomListItem) : Fragment() {
 
     private fun setButton(){
         binding.btnDialogRoomJoin.setOnClickListener {
-            var i = Intent(context,ChatActivity::class.java)
-            i.putExtra("room_pk",item.room.pk)
-            startActivity(i)
+            if(SharedPreferenceManager.getInt(requireContext(),"pk") != 0){
+                var searchFlag = false
+                for (i in item.room.user_list){
+                    if(SharedPreferenceManager.getInt(requireContext(),"pk") == i.pk){
+                        searchFlag = true
+                        break
+                    }
+                }
+                var endFlag = false
+                if (item.room.people_number == item.room.now_people_cnt){
+                    endFlag = true
+                }
+                if(searchFlag){
+                    val i = Intent(context,ChatActivity::class.java)
+                    i.putExtra("room_pk",item.room.pk)
+                    startActivity(i)
+                    joinLog("RoomJoin","alreadyJoin")
+                }
+                else{
+                    if(!endFlag){
+                        val retrofit = RetrofitClient.getInstance()
+                        val api = retrofit.buildRetrofit()
+                        val hashMap = HashMap<String,Int>()
+                        hashMap.put("room_pk",item.room.pk)
+                        hashMap.put("user_pk",SharedPreferenceManager.getInt(requireContext(),"pk"))
+                        val callPostRoomUser = api.postRoomUser(hashMap)
+                        callPostRoomUser.enqueue(object: Callback<Int> {
+                            @SuppressLint("NotifyDataSetChanged")
+                            override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                                if(!response.isSuccessful){
+                                    joinLog("response err",response.body().toString())
+                                    Toast.makeText(requireContext(),"현재 매칭방에 입장이 불가능합니다. 인터넷 연결을 확인해주세요.",Toast.LENGTH_SHORT).show()
+                                }
+                                else{
+                                    joinLog("response",response.body().toString())
+                                    val i = Intent(context,ChatActivity::class.java)
+                                    i.putExtra("room_pk",item.room.pk)
+                                    startActivity(i)
+                                }
+                            }
+                            override fun onFailure(call: Call<Int>, t: Throwable) {
+                                joinLog("response fail",t.toString())
+                                Toast.makeText(requireContext(),"현재 매칭방에 입장이 불가능합니다. 인터넷 연결을 확인해주세요.",Toast.LENGTH_SHORT).show()
+                            }
+                        })
+
+                    }
+                    else{
+                        Toast.makeText(requireContext(),"현재 매칭방이 꽉차서 입장이 불가능 합니다.",Toast.LENGTH_SHORT).show()
+                        joinLog("RoomJoin","failJoin")
+                    }
+                }
+
+            }
+            else{
+                joinLog("RoomJoin","fail load pk : " +SharedPreferenceManager.getInt(requireContext(),"pk").toString())
+            }
         }
+
     }
 }

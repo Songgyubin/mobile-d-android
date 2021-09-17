@@ -1,9 +1,11 @@
 package op.gg.joinus.main
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import op.gg.joinus.R
 import op.gg.joinus.databinding.ItemHomeRoomlistBinding
 
 class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<HomeRoomListAdapter.MyViewHolder>() {
@@ -29,6 +31,7 @@ class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<
         holder.bind(itemList[position])
     }
     inner class MyViewHolder(private val binding:ItemHomeRoomlistBinding) : RecyclerView.ViewHolder(binding.root){
+        @SuppressLint("ResourceAsColor")
         fun bind(item:HomeRoomListItem){
             with(binding){
                 homeRoomlistItem = item
@@ -36,6 +39,10 @@ class HomeRoomListAdapter(private val context : Context) : RecyclerView.Adapter<
                     if(mListener != null){
                         mListener!!.onItemClick(item)
                     }
+                }
+                if (item.room.is_start == 1){
+                    binding.txtMatchTime.setBackgroundResource(R.drawable.bg_complete_match)
+                    binding.txtMatchTime.setTextColor(R.color.black_30)
                 }
                 executePendingBindings()
             }

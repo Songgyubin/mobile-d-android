@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="dialog_check_manner"
+            type="android.app.Dialog" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="230dp"
+        android:background="@drawable/bg_check_matching"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_manner_1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_manner_1" />
+
+                <ImageView
+                    android:id="@+id/img_manner_2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_manner_2" />
+
+                <ImageView
+                    android:id="@+id/img_manner_3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_manner_3" />
+
+                <ImageView
+                    android:id="@+id/img_manner_4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_manner_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_manner_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="낮음"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_manner_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_check_manner_arrow" />
+
+                <TextView
+                    android:id="@+id/txt_manner_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="높음"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_manner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="팀원들의 평균 매너도가 표시 됩니다."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_check_manner"
+            android:layout_width="296dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="확인"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/floating_background" />
+    </LinearLayout>
+</layout>

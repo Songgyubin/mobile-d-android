@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import op.gg.joinus.R
 import op.gg.joinus.databinding.FragmentMyBinding
+import op.gg.joinus.util.getTier
 
 class MyFragment : Fragment() {
     private lateinit var binding: FragmentMyBinding
@@ -25,18 +26,21 @@ class MyFragment : Fragment() {
                 container,
                 false
             )
-
+        initView()
         return binding.root
     }
 
     private fun initView() {
-        binding.btnFriendsList.setOnClickListener {  }
-        binding.btnFriendsList.setOnClickListener {  }
-        binding.btnFriendsList.setOnClickListener {  }
+
+        binding.btnFriendsList.setOnClickListener { replaceFragment(FriendsListFragment()) }
+        (activity as MainActivity).resetToolbar()
+        setToolbar()
     }
 
-    private fun replaceFragment() {
-
+    private fun replaceFragment(fragment: Fragment) {
+        (activity as MainActivity).supportFragmentManager.beginTransaction()
+            .add((activity as MainActivity).binding.fragmentContainerViewMain.id, fragment)
+            .commit()
     }
 
     override fun onAttach(context: Context) {
@@ -58,12 +62,13 @@ class MyFragment : Fragment() {
     private fun setToolbar() {
         val menuListener = Toolbar.OnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.item_logout -> {
-                    //TODO: 로그아웃 다이얼로그 생성성
-                }
+                R.id.item_logout -> { }
             }
             true
         }
-        (activity as MainActivity).setToolbar(R.menu.menu_home, menuListener)
+//        (activity as MainActivity).setToolbar("MY",R.menu.menu_home, menuListener)
+
+        (activity as MainActivity).setToolbar(R.menu.menu_my, menuListener, "MY")
     }
+
 }

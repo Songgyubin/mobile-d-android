@@ -5,7 +5,7 @@
         >
     </item>
     <item android:state_checked="false"
-        android:drawable="@drawable/manner_3_checked"
+        android:drawable="@drawable/manner_3_unchecked"
         >
     </item>
 </selector>

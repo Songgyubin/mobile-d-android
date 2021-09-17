@@ -27,7 +27,7 @@ import retrofit2.Retrofit
 class OnboardingFragment5 : Fragment() {
     private lateinit var binding: FragmentOnboarding5Binding
     private lateinit var mContext: Context
-    private lateinit var onboardActivity:OnboardingActivity
+    private lateinit var onboardActivity: OnboardingActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,6 +42,8 @@ class OnboardingFragment5 : Fragment() {
         initButton()
         initImageButton()
         getFirebaseToken()
+        onboardActivity = activity as OnboardingActivity
+        onboardActivity.setVisibleGameLogo(false)
 
         return binding.root
     }

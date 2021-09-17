@@ -17,7 +17,7 @@ import op.gg.joinus.R
 import op.gg.joinus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private val fragmentHome: HomeFragment = HomeFragment()
     private val fragmentMyMatch: MyMatchFragment = MyMatchFragment()
     private val fragmentMy: MyFragment = MyFragment()
@@ -90,6 +90,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun setToolbar(menuId: Int, menuClickListener: Toolbar.OnMenuItemClickListener, title: String) {
+        binding.toolbarMainTitle.text = title
+        val toolbar = binding.toolbarMain
+        toolbar.inflateMenu(menuId)
+        toolbar.setOnMenuItemClickListener(menuClickListener)
+    }
+
     fun setToolbar(menuId: Int, menuClickListener: Toolbar.OnMenuItemClickListener) {
         val toolbar = binding.toolbarMain
         toolbar.inflateMenu(menuId)
@@ -130,6 +137,7 @@ class MainActivity : AppCompatActivity() {
     fun returnBottomNavigationView() {
         val bottomNavigationView = binding.bottomNavigationViewMain
         bottomNavigationView.visibility = View.VISIBLE
+
     }
 
 }

@@ -31,7 +31,8 @@ class LoginActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_JoinUs)
+        Thread.sleep(500)
+        setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
@@ -52,7 +53,6 @@ class LoginActivity : AppCompatActivity() {
 //        binding.btnGoogleLogin.setOnClickListener { getToken() }
         binding.btnGoogleLogin.setOnClickListener {
             //            signIn("4%2F0AX4XfWgPRNBXe6_Q09FzP28x3dySDblIYVKcGbOfVjJc1sSF8SYCw34QX5xyA2vhB3leXA&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile")
-
             // 임시값 ( sub == token )
             SharedPreferenceManager.let {
                 it.setInt(this, "age", 21)

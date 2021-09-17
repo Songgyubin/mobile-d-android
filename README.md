@@ -26,3 +26,4 @@ https://github.com/Songgyubin
 
 ## # 소개 영상
 
+[![Video Label](http://img.youtube.com/vi/F0Czi8IJsdE/0.jpg)](https://youtu.be/F0Czi8IJsdE)
